@@ -1,0 +1,11 @@
+<table>
+<tbody data-bind="foreach: getlist()" class="table table-condensed table-striped">
+<tr><td><img width="128px" height="128px" data-bind="attr:{src: url}" /></td>
+<td data-bind="text: name"></td>
+
+<td>
+<input data-bind="value: label" class="input" style="max-width:150px;">
+</td>
+<td><button data-bind="click: $parent.remove;">x</button></td></tr>
+</tbody>
+</table>

@@ -1,0 +1,235 @@
+<?php
+
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+namespace Ibapi\Multiv\Model\Layer\Filter;
+
+use Magento\Catalog\Model\Category as CategoryModel;
+use Magento\Catalog\Model\CategoryFactory as CategoryModelFactory;
+use Magento\Catalog\Model\Layer;
+use Magento\Framework\Registry;
+
+/**
+ * Layer category filter
+ *
+ * @author      Magento Core Team <core@magentocommerce.com>
+ */
+class StaticFilter extends \Magento\Catalog\Model\Layer\Filter\AbstractFilter {
+
+    /**
+     * Active Category Id
+     *
+     * @var int
+     */
+    protected $_categoryId;
+
+    /**
+     * Applied Category
+     *
+     * @var \Magento\Catalog\Model\Category
+     */
+    protected $_appliedCategory;
+
+    /**
+     * Core data
+     *
+     * @var \Magento\Framework\Escaper
+     */
+    protected $_escaper;
+
+    /**
+     * Core registry
+     *
+     * @var \Magento\Framework\Registry
+     */
+    protected $_coreRegistry;
+
+    /**
+     * @var CategoryDataProvider
+     */
+    private $dataProvider;
+
+    /**
+     * Construct
+     *
+     * @param \Magento\Catalog\Model\Layer\Filter\ItemFactory $filterItemFactory
+     * @param \Magento\Store\Model\StoreManagerInterface $storeManager
+     * @param \Magento\Catalog\Model\Layer $layer
+     * @param \Magento\Catalog\Model\Layer\Filter\Item\DataBuilder $itemDataBuilder
+     * @param \Magento\Framework\Escaper $escaper
+     * @param CategoryFactory $categoryDataProviderFactory
+     * @param array $data
+     */
+    public function __construct(
+    \Magento\Catalog\Model\Layer\Filter\ItemFactory $filterItemFactory,
+    \Magento\Store\Model\StoreManagerInterface $storeManager, 
+    \Magento\Catalog\Model\Layer $layer, 
+    \Magento\Catalog\Model\Layer\Filter\Item\DataBuilder $itemDataBuilder, 
+    \Magento\Framework\Escaper $escaper, 
+    \Magento\Framework\ObjectManagerInterface $objectManager, 
+    \Magento\Catalog\Model\Product $productModel, 
+    \Magento\Catalog\Model\Product\Attribute\Source\Status $productStatus, 
+    \Magento\Catalog\Model\Product\Visibility $productVisibility, 
+    array $data = []
+    ) {
+         $this->_storeManager = $storeManager;        
+        parent::__construct($filterItemFactory, $storeManager, $layer, $itemDataBuilder, $data);
+        $this->_escaper = $escaper;
+        $this->objectManager = $objectManager;
+        $this->_productModel = $productModel;
+        $this->productStatus = $productStatus;
+        $this->productVisibility = $productVisibility;
+         $this->_requestVar = 'rating';
+    }
+
+    protected $stars = array(
+        1 => 20,
+        2 => 40,
+        3 => 60,
+        4 => 80,
+        5 => 100,
+    );    
+
+    /**
+     * Get filter value for reset current filter state
+     *
+     * @return mixed|null
+     */
+
+
+    /**
+     * Apply category filter to layer
+     *
+     * @param   \Magento\Framework\App\RequestInterface $request
+     * @return  $this
+     */
+    public function apply(\Magento\Framework\App\RequestInterface $request) {
+        /**
+         * Filter must be string: $fromPrice-$toPrice
+         */
+        $filter = $request->getParam($this->getRequestVar());
+        if (!$filter) {
+            return $this;
+        }
+        $collection = $this->getLayer()->getProductCollection();
+        $select = $collection->getSelect();
+        $minRating = (array_key_exists($filter, $this->stars))
+            ? $this->stars[$filter]
+            : 0;
+        $reviewSummary = 'review_entity_summary';
+        $select->joinLeft(
+            array('rating' => $reviewSummary),
+            sprintf('`rating`.`entity_pk_value`=`e`.entity_id
+                    AND `rating`.`entity_type` = 1
+                    AND `rating`.`store_id`  =  %d',
+                $this->_storeManager->getStore()->getId()
+            ),
+            ''
+        );
+        $select->where('`rating`.`rating_summary` >= ?',
+            $minRating);
+        $state = $this->_createItem($this->getLabelHtml($filter), $filter)
+                      ->setVar($this->_requestVar);
+        $this->getLayer()->getState()->addFilter($state);
+
+
+        return $this;
+    }
+
+    /**
+     * Get filter name
+     *
+     * @return \Magento\Framework\Phrase
+     */
+    public function getName() {
+        return __('Rating');
+    }
+
+    protected function _getItemsData()
+    {   
+        $data = array();
+        $count = $this->_getCount();
+
+        $currentValue = $this->getRequestVar();
+        for ($i=1;$i<=5;$i++) {
+            $data[] = array(
+                'label' => $this->getLabelHtml($i),
+                'value' => ($currentValue == $i) ? null : $i,
+                'count' => $count[($i-1)],
+                'option_id' => $i,
+            );
+        }
+        return $data;
+    }
+    /**
+     * @return array
+     */
+    protected function _getCount()
+    {
+        $collection = $this->getLayer()->getProductCollection();
+        $connection = $collection->getConnection();
+        $connection
+            ->query('SET @ONE :=0, @TWO := 0, @THREE := 0, @FOUR := 0, @FIVE := 0');
+        $select = clone $collection->getSelect();
+
+        $select->reset(\Zend_Db_Select::COLUMNS);
+        $select->reset(\Zend_Db_Select::ORDER);
+        $select->reset(\Zend_Db_Select::LIMIT_COUNT);
+        $select->reset(\Zend_Db_Select::LIMIT_OFFSET);
+        $select->reset(\Zend_Db_Select::WHERE);      
+        $reviewSummary = 'review_entity_summary';
+        $select->joinLeft(
+            array('rsc' => $reviewSummary),
+            sprintf('`rsc`.`entity_pk_value`=`e`.entity_id
+                AND `rsc`.entity_type = 1
+                AND `rsc`.store_id  =  %d',
+                $this->_storeManager->getStore()->getId()),
+            'rsc.rating_summary AS rating'
+        );
+        $columns = new \Zend_Db_Expr("
+            IF(`rsc`.`rating_summary` <  40, @ONE := @ONE + 1, 0),
+            IF(`rsc`.`rating_summary` >= 40 AND `rsc`.`rating_summary` < 60, @TWO := @TWO + 1, 0),
+            IF(`rsc`.`rating_summary` >= 60 AND `rsc`.`rating_summary` < 80, @THREE := @THREE + 1, 0),
+            IF(`rsc`.`rating_summary` >= 80 AND `rsc`.`rating_summary` < 100, @FOUR := @FOUR + 1, 0),
+            IF(`rsc`.`rating_summary` >= 100, @FIVE := @FIVE + 1, 0)
+        ");
+        $select->columns($columns);
+        $connection->query($select);
+        $result = $connection->fetchRow('SELECT @ONE, @TWO, @THREE, @FOUR, @FIVE;');
+        return array_values($result);
+    }
+    protected function _initItems()
+    {   
+        $data  = $this->_getItemsData();
+
+        $items = array();
+        foreach ($data as $itemData) {
+            $item = $this->_createItem(
+                $itemData['label'],
+                $itemData['value'],
+                $itemData['count']
+            );
+            $item->setOptionId($itemData['option_id']);
+            $items[] = $item;
+        }
+        $this->_items = $items;
+
+        return $this;
+    }
+
+    protected function getLabelHtml($countStars)
+    {
+         $html = '<div class="rating-summary" style="display: inline-block;margin-top: -5px;">
+                                        <div class="rating-result" title="100%">
+                                            <span style="width:'.$countStars*20 .'%"></span>
+                                        </div>
+                                    </div>';
+        return $html;
+    }
+
+
+
+}

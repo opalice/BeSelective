@@ -1,0 +1,44 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Magento\Review\Block\Product\ReviewRenderer $block */
+
+$url = $block->getReviewsUrl() . '#reviews';
+$urlForm = $block->getReviewsUrl() . '#review-form';
+?><!-- summary short -->
+<?php if ($block->getReviewsCount()): ?>
+<?php $rating = $block->getRatingSummary();?>
+<div class="product-reviews-summary short<?= !$rating ? ' no-rating' : '' ?>">
+    <?php if ($rating):?>
+    <div class="rating-summary">
+        <div class="rating-result" title="<?= $block->escapeHtmlAttr($rating) ?>%">
+            <span style="width:<?= $block->escapeHtmlAttr($rating) ?>%"><span><?= $block->escapeHtml($rating) ?>%</span></span>
+        </div>
+    </div>
+    <?php endif;?>
+</div>
+<?php elseif ($block->getDisplayIfEmpty()): ?>333
+<div class="product-reviews-summary short empty">
+    <div class="reviews-actions">
+        <a class="action add" href="<?= $block->escapeUrl($urlForm) ?>">
+            <?= $block->escapeHtml(__('Be the first to review this product')) ?>
+        </a>
+    </div>
+</div>
+<?php else:?>
+<div class="product-reviews-summary short empty">1000
+ <?php $rating=100;?>
+ <div class="rating-summary">
+        <div class="rating-result" title="<?= $block->escapeHtmlAttr($rating) ?>%">
+            <span style="width:<?= $block->escapeHtmlAttr($rating) ?>%"><span><?= $block->escapeHtml($rating) ?>%</span></span>
+        </div>
+    </div>
+ 
+ </div>
+
+<?php endif; ?>

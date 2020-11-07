@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Catalog:etc/product_types.xsd">
+    <type name="cloth" label="Cloth" modelInstance="Ibapi\Multiv\Model\Type\ClothType">
+		<priceModel instance="Ibapi\Multiv\Model\Type\RentPrice" />
+    </type>
+    <type name="accessory" label="Accessory" modelInstance="Ibapi\Multiv\Model\Type\AccessoryType">
+        <priceModel instance="Ibapi\Multiv\Model\Type\RentPrice" />
+    </type>
+    <type name="subscription" label="Subscription" modelInstance="Ibapi\Multiv\Model\Type\SubType">
+    </type>
+
+    <type name="deposit" label="Deposit" modelInstance="Ibapi\Multiv\Model\Type\DepType" >
+			<priceModel instance="Ibapi\Multiv\Model\Type\DepPrice" />    
+    </type>
+   <!-- 
+   
+    <type name="tbund" label="Rentbundle" modelInstance="Ibapi\Multiv\Model\Type\BundleType" ></type>
+-->
+</config>

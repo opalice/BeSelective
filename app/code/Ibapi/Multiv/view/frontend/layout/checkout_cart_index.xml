@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+		<referenceContainer name="checkout.cart.totals.container">
+
+		<block class="Ibapi\Multiv\Block\Checkout\Addsub" name="checkout_cart_addsub" after="checkout.cart.totals" template="Ibapi_Multiv::addsub.phtml" cacheable="false"></block>
+		</referenceContainer>
+       
+       
+       <referenceBlock name="checkout.cart.totals">
+           <arguments>
+               <argument name="jsLayout" xsi:type="array">
+                   <item name="components" xsi:type="array">
+
+
+                       <item name="block-totals" xsi:type="array">
+                           <item name="children" xsi:type="array">
+
+						<item name="sideblock-rental" xsi:type="array">
+                         
+
+                                    <item name="component"  xsi:type="string">Ibapi_Multiv/js/view/checkout/cart/totals/rental</item>
+                                    <item name="sortOrder" xsi:type="string">0</item>
+                                    <item name="config" xsi:type="array">
+                                         <item name="template" xsi:type="string">Ibapi_Multiv/checkout/cart/totals/rental</item>
+                                        <item name="title" xsi:type="string" translate="true">Rental</item>
+                                    </item>
+
+                       </item>
+                       			
+                                <item name="vipdiscount" xsi:type="array">
+                                    <item name="component"  xsi:type="string">Ibapi_Multiv/js/view/checkout/cart/totals/discount</item>
+                                    <item name="sortOrder" xsi:type="string">20</item>
+                                    <item name="config" xsi:type="array">
+                                         <item name="template" xsi:type="string">Ibapi_Multiv/checkout/cart/totals/discount</item>
+                                        <item name="title" xsi:type="string" translate="true">Vip Discount</item>
+                                    </item>
+                                </item>
+								<item name="viscount" xsi:type="array">
+                                    <item name="component"  xsi:type="string">Ibapi_Multiv/js/view/checkout/cart/totals/discount2</item>
+                                    <item name="sortOrder" xsi:type="string">20</item>
+                                    <item name="config" xsi:type="array">
+                                         <item name="template" xsi:type="string">Ibapi_Multiv/checkout/cart/totals/discount2</item>
+																<item name="title" xsi:type="helper" helper="Ibapi\Multiv\Helper\Data::getDisTitle"/>
+                                                                 <item name="enabled" xsi:type="helper" helper="Ibapi\Multiv\Helper\Data::getDisEnable"/>
+                                    </item>
+                                </item>                                
+
+                           </item>
+                       </item>
+                   </item>
+               </argument>
+           </arguments>
+       </referenceBlock>
+       
+            <referenceContainer name="before.body.end">
+            <block class="Magento\Framework\View\Element\Template" name="multiv-qty-disable"
+                   template="Ibapi_Multiv::cart/qty.phtml"  cacheable="false" />
+       		 </referenceContainer>
+
+    </body>
+</page>

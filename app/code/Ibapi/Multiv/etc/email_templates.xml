@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Email/etc/email_templates.xsd">
+    <template id="commission_mail" label="Commission Email" file="commission.html" type="html" module="Ibapi_Multiv" area="frontend"/>
+</config>

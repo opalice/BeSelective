@@ -1,0 +1,406 @@
+"Review Image","Review Image"
+Taxes,Taxes
+"Money Box","Money Box"
+"Vip Discount","Vip Discount"
+"Ex Tax","Ex Tax"
+Jan,Jan
+Feb,Feb
+Mar,Mar
+Apr,Apr
+May,May
+Jun,Jun
+Jul,Jul
+Aug,Aug
+Sep,Sep
+Oct,Oct
+Nov,Nov
+Dec,Dec
+Mon,Mon
+Tue,Tue
+Wed,Wed
+Thur,Thur
+Fri,Fri
+Sat,Sat
+Sun,Sun
+"from %1 for %2 days","from %1 for %2 days"
+"Army Address","Army Address"
+"Date not available for this product.","Date not available for this product."
+"My Products","My Products"
+"My Reservations","My Reservations"
+"Product Saved","Product Saved"
+"Product Save error","Product Save error"
+Success,Success
+Fail,Fail
+"Item expected to receive","Item expected to receive"
+"Your rental expires and wait for the return by courier or return to the showroom on %1 ","Your rental expires and wait for the return by courier or return to the showroom on %1 "
+"Rent expiry notice","Rent expiry notice"
+"Delete successfully !","Delete successfully !"
+"order not in return mode # %1","order not in return mode # %1"
+"Invalid amount # %1/%2","Invalid amount # %1/%2"
+"Deposit partial capture invoice #%1 %2","Deposit partial capture invoice #%1 %2"
+"deposit partial capture. %1 . Rest needs to be voided ","deposit partial capture. %1 . Rest needs to be voided "
+"Amount not specified.","Amount not specified."
+"balance Deposit refunded invoice #%1. %2","balance Deposit refunded invoice #%1. %2"
+"balance deposit refunded  invoice created # %1","balance deposit refunded  invoice created # %1"
+"order not returned # %1","order not returned # %1"
+"Deposit forfeited invoice #%1. %2","Deposit forfeited invoice #%1. %2"
+"deposit Amount forfeited and invoice created # %1","deposit Amount forfeited and invoice created # %1"
+"order not in fault mode # %1","order not in fault mode # %1"
+"order not returned # %1 = %2 ","order not returned # %1 = %2 "
+"We have received the rented items and your deposit will be released soon in its entirety. ","We have received the rented items and your deposit will be released soon in its entirety. "
+"We have  released  deposit ϵ %1. %2","We have  released  deposit ϵ %1. %2"
+"We have partially released  ϵ %1. %2","We have partially released  ϵ %1. %2"
+"Deposit refunded. %1","Deposit refunded. %1"
+"Deposit Refunded.  # %1","Deposit Refunded.  # %1"
+"order not processed # %1","order not processed # %1"
+"Payment of rental invoice #%1. %2","Payment of rental invoice #%1. %2"
+"Amount captured and invoice created # %1","Amount captured and invoice created # %1"
+Reservations,Reservations
+Done,Done
+"Subscription already in cart","Subscription already in cart"
+"Subscription already in cart.","Subscription already in cart."
+"Already Subscribed","Already Subscribed"
+"Subscription added","Subscription added"
+"Subcription added","Subcription added"
+"Cannot subscribe now ","Cannot subscribe now "
+Invalid,Invalid
+Delete,Delete
+"Cannot delete","Cannot delete"
+"Invalid access","Invalid access"
+"No access","No access"
+"Product Saved.","Product Saved."
+"Upload error","Upload error"
+"Login successful.","Login successful."
+"Invalid login or password.","Invalid login or password."
+"Username already exist. login to your account.","Username already exist. login to your account."
+"Username exist.","Username exist."
+"Registered and logged in.","Registered and logged in."
+"Cannot reserve for %1 to %2 . try another date.","Cannot reserve for %1 to %2 . try another date."
+None,None
+"ADRIANNA PAPELL","ADRIANNA PAPELL"
+"AIDAN MATTOX","AIDAN MATTOX"
+ALAÏA,ALAÏA
+"ALBERTA FERRETI","ALBERTA FERRETI"
+"ALBERTA FERRETTI","ALBERTA FERRETTI"
+"ALEXANDER McQUEEN","ALEXANDER McQUEEN"
+ALEXIS,ALEXIS
+"ALICE + OLIVIA","ALICE + OLIVIA"
+"ANNA RACHELE BLACK LABEL","ANNA RACHELE BLACK LABEL"
+"ANNA RACHELE","ANNA RACHELE"
+"BADGLEY MISCHKA","BADGLEY MISCHKA"
+BCBGMAXAZRIA,BCBGMAXAZRIA
+"BELLA RHAPSODY","BELLA RHAPSODY"
+"CAVALLI CLASS","CAVALLI CLASS"
+COS,COS
+"CEDRIC CHARLIER","CEDRIC CHARLIER"
+"CHIARA P","CHIARA P"
+"CHRISTIAN PELIZZARI","CHRISTIAN PELIZZARI"
+"CHRISTIAN PELLIZZARI","CHRISTIAN PELLIZZARI"
+DIESEL,DIESEL
+"DAVID MEISTER","DAVID MEISTER"
+DELVAUX,DELVAUX
+"DIANE KRÜGER","DIANE KRÜGER"
+"DIANE VON FUSTENBERG","DIANE VON FUSTENBERG"
+"DIANE VON FURSTENBERG","DIANE VON FURSTENBERG"
+"DOLCE GABBANA","DOLCE GABBANA"
+"DOLCE & GABBANA","DOLCE & GABBANA"
+"EBENE BY P. ASSULINE","EBENE BY P. ASSULINE"
+"ELIE TAHARI","ELIE TAHARI"
+"ELISABETA FRANCHI","ELISABETA FRANCHI"
+"ELISABETTA FRANCHI","ELISABETTA FRANCHI"
+"EMPORIO ARMANI","EMPORIO ARMANI"
+GANNI,GANNI
+GENTRYPORTOFINO,GENTRYPORTOFINO
+GUCCI,GUCCI
+"HALSTON HERIATGE","HALSTON HERIATGE"
+"HALSTON HERITAGE","HALSTON HERITAGE"
+"HELMUT LANG","HELMUT LANG"
+"HERVE LEGER","HERVE LEGER"
+"HÔTEL PARTICULIER","HÔTEL PARTICULIER"
+IKKS,IKKS
+IRO,IRO
+"JIMMY CHOO","JIMMY CHOO"
+JOSEPH,JOSEPH
+"KARL LAGERFELD PARIS","KARL LAGERFELD PARIS"
+KENZO,KENZO
+LANCEL,LANCEL
+"LAUNDRY BY SHELLI SEGAL","LAUNDRY BY SHELLI SEGAL"
+LEETHA,LEETHA
+"LOUIS VUITTON","LOUIS VUITTON"
+"LOVE MOSCHINO","LOVE MOSCHINO"
+"MAISON MARCIELA","MAISON MARCIELA"
+"MAISON MARGIELA","MAISON MARGIELA"
+MAJE,MAJE
+"MARC JACOB","MARC JACOB"
+"MARC JACOBS","MARC JACOBS"
+MARCIANO,MARCIANO
+"MARIA LUCIA HOHAN","MARIA LUCIA HOHAN"
+"MONIQUE LHUILLIER","MONIQUE LHUILLIER"
+"MOSCHINO COUTURE","MOSCHINO COUTURE"
+"NINA RICCI","NINA RICCI"
+"NORA BARTH","NORA BARTH"
+"ROBERTO CAVALLI","ROBERTO CAVALLI"
+RODO,RODO
+SANDRO,SANDRO
+SCAPA,SCAPA
+"SELF PORTRAIT","SELF PORTRAIT"
+SOANI,SOANI
+"SOHO DE LUXE","SOHO DE LUXE"
+"SPACE STYLE CONCEPT","SPACE STYLE CONCEPT"
+"STELLA McCARTNEY","STELLA McCARTNEY"
+"TADASHI SHOJI","TADASHI SHOJI"
+"TERI JON","TERI JON"
+"THIERRY MUGLER","THIERRY MUGLER"
+"THOMAS WILDE","THOMAS WILDE"
+"VIVIENNE WESTWOOD","VIVIENNE WESTWOOD"
+"YVES ST LAURENT","YVES ST LAURENT"
+"ZADIG & VOLTAIRE","ZADIG & VOLTAIRE"
+VELVET,VELVET
+VERSACE,VERSACE
+ARGENTE,ARGENTE
+BEIGE,BEIGE
+BLANC,BLANC
+BLEU,BLEU
+CHAMPAGNE,CHAMPAGNE
+DORE,DORE
+GRIS,GRIS
+JAUNE,JAUNE
+MARRON,MARRON
+NOIR,NOIR
+ORANGE,ORANGE
+ROSE,ROSE
+ROUGE,ROUGE
+VERT,VERT
+VIOLET,VIOLET
+"MOTIF IMPRIME","MOTIF IMPRIME"
+COURTE,COURTE
+3/4,3/4
+LONGUE,LONGUE
+32,32
+34,34
+36,36
+38,38
+40,40
+42,42
+44,44
+46,46
+"This product cannot be added to your cart.","This product cannot be added to your cart."
+"Insufficient balance","Insufficient balance"
+"Too late reservation cancelled. please try again.","Too late reservation cancelled. please try again."
+Thumbnail,Thumbnail
+"File can not be saved to the destination folder.","File can not be saved to the destination folder."
+"Too big.","Too big."
+"Something went wrong while saving the file(s).","Something went wrong while saving the file(s)."
+"'Something went wrong while saving the file(s).' .","'Something went wrong while saving the file(s).' ."
+"Vip  Discount","Vip  Discount"
+"Sorry, something went wrong. You can find out more in the error log.","Sorry, something went wrong. You can find out more in the error log."
+"Bucket does not exist","Bucket does not exist"
+"Object with id ""%1"" does not exist.","Object with id ""%1"" does not exist."
+Subtotal2,Subtotal2
+"Invalid configuration","Invalid configuration"
+"We can't find the product.","We can't find the product."
+"Can't add products for 2 dates.","Can't add products for 2 dates."
+"Not logged in.","Not logged in."
+"Cannot add","Cannot add"
+"Cannot be added again.","Cannot be added again."
+"Invalid options","Invalid options"
+"Cannot add.","Cannot add."
+Edit,Edit
+"Enter Order and or payment status","Enter Order and or payment status"
+Submit,Submit
+Reset,Reset
+Ship,Ship
+Received,Received
+"Do you want to mark received ?","Do you want to mark received ?"
+"Full Refund","Full Refund"
+Refund,Refund
+"Full Refund ?","Full Refund ?"
+"Partial Refund","Partial Refund"
+"Partial Refund ?","Partial Refund ?"
+"Deposit Take","Deposit Take"
+Deposit,Deposit
+"Void Deposit?","Void Deposit?"
+SKU,SKU
+Ordered,Ordered
+Invoiced,Invoiced
+Shipped,Shipped
+Refunded,Refunded
+Canceled,Canceled
+N/A,N/A
+"Devenez Premium et obtenez","Devenez Premium et obtenez"
+"de réduction immédiatement.","de réduction immédiatement."
+"Devenir VIP Premium","Devenir VIP Premium"
+"Apply Discount Code","Apply Discount Code"
+"Enter discount code","Enter discount code"
+"Apply Discount","Apply Discount"
+"Cancel Coupon","Cancel Coupon"
+"Shopping Cart Items","Shopping Cart Items"
+Item,Item
+Price,Price
+Qty,Qty
+Subtotal,Subtotal
+"Continue Shopping","Continue Shopping"
+"Clear Shopping Cart","Clear Shopping Cart"
+"Update Shopping Cart","Update Shopping Cart"
+"Update Cart","Update Cart"
+"See price before order confirmation.","See price before order confirmation."
+"What's this?","What's this?"
+Rent,Rent
+Date,Date
+To,To
+"My Cart","My Cart"
+"You have no items in your shopping cart.","You have no items in your shopping cart."
+"Click <a href=""%1"">here</a> to continue shopping.","Click <a href=""%1"">here</a> to continue shopping."
+"Estimate Tax","Estimate Tax"
+"Estimate Shipping and Tax","Estimate Shipping and Tax"
+Clear,Clear
+Apply,Apply
+Thu,Thu
+"Not available or blocked","Not available or blocked"
+"Available for booking.","Available for booking."
+"Rental Period","Rental Period"
+"4 Days","4 Days"
+"8 Days","8 Days"
+Close,Close
+"Start of your booking","Start of your booking"
+"your booking.","your booking."
+"End of your booking.","End of your booking."
+"Durée de location :","Durée de location :"
+"jours de location :","jours de location :"
+Période,Période
+au,au
+"checkout not available for this product.","checkout not available for this product."
+"Gift Message","Gift Message"
+From:,From:
+To:,To:
+Message:,Message:
+item,item
+items,items
+"Now Shopping by","Now Shopping by"
+Previous,Previous
+Remove,Remove
+"Remove This Item","Remove This Item"
+Category,Category
+"Shop By","Shop By"
+"Price Range","Price Range"
+Colors,Colors
+Brands,Brands
+Length,Length
+Size,Size
+"We can't find products matching the selection.","We can't find products matching the selection."
+"Add to Cart","Add to Cart"
+"In stock","In stock"
+"Out of stock","Out of stock"
+"Learn More","Learn More"
+Tailles,Tailles
+"Période de location","Période de location"
+Taille:,Taille:
+Taille2:,Taille2:
+Essayage,Essayage
+"en boutique","en boutique"
+caution,caution
+"(non encaissée)","(non encaissée)"
+"Create New Product","Create New Product"
+Products,Products
+Name,Name
+Status,Status
+Action,Action
+Actions,Actions
+"View Product","View Product"
+"You have no products.","You have no products."
+"Grid Record","Grid Record"
+"ID #","ID #"
+Title,Title
+Start,Start
+End,End
+Earning,Earning
+"no reservationss.","no reservationss."
+"Product #","Product #"
+Commission,Commission
+"reservation datas records not available.","reservation datas records not available."
+"Show Reviews","Show Reviews"
+..,..
+"Write Your Own Review","Write Your Own Review"
+"* Required Fields","* Required Fields"
+"You're reviewing:","You're reviewing:"
+"Your Rating","Your Rating"
+"%1 %2","%1 %2"
+Nickname,Nickname
+Summary,Summary
+Review,Review
+"Review Pic","Review Pic"
+"Upload new Image","Upload new Image"
+"Only jpg file less than 2MB","Only jpg file less than 2MB"
+"Submit Review","Submit Review"
+"Only registered users can write reviews. Please <a href=""%1"">Sign in</a> or <a href=""%2"">create an account</a>","Only registered users can write reviews. Please <a href=""%1"">Sign in</a> or <a href=""%2"">create an account</a>"
+"Product Name","Product Name"
+Quantity,Quantity
+"Discount Amount","Discount Amount"
+"Row Total","Row Total"
+"Qty Invoiced","Qty Invoiced"
+"Qty Shipped","Qty Shipped"
+"You can purchase in this range only:","You can purchase in this range only:"
+"Subscribe to premium and get 15%","Subscribe to premium and get 15%"
+"More informations","More informations"
+"commission from  %store_name order","commission from  %store_name order"
+"%fname %lname","%fname %lname"
+"Votre article %product %prdurl mis en location a été loué ce jour.
+Votre commission de 20&#x25; sur la location est de  %amt .","Votre article %product %prdurl mis en location a été loué ce jour.
+Votre commission de 20&#x25; sur la location est de  %amt ."
+"Ce montant est versé sur votre Money Box.","Ce montant est versé sur votre Money Box."
+"Profitez-en pour louer sur notre site ou demandez le remboursement de la commission par mail à info@beselective.be.","Profitez-en pour louer sur notre site ou demandez le remboursement de la commission par mail à info@beselective.be."
+Press,Press
+"Checkout as a new customer","Checkout as a new customer"
+"Email Address","Email Address"
+Password,Password
+"Repeat Password","Repeat Password"
+Register,Register
+"Checkout using your account","Checkout using your account"
+"Sign In","Sign In"
+"Forgot Your Password?","Forgot Your Password?"
+"Buy within","Buy within"
+"See Details","See Details"
+"Options Details","Options Details"
+Update,Update
+Save,Save
+"Informations de livraison","Informations de livraison"
+"Livraison standard","Livraison standard"
+"Livraison dans les 48h en Belgique (2 jours ouvrables). Retour par coursier sur Bruxelles et retour à un point relais en dehors de Bruxelles.","Livraison dans les 48h en Belgique (2 jours ouvrables). Retour par coursier sur Bruxelles et retour à un point relais en dehors de Bruxelles."
+"Livraison express","Livraison express"
+"Livraison dans les 24h uniquement dans les 19 communes de Bruxelles. Livraison et retour par coursier.","Livraison dans les 24h uniquement dans les 19 communes de Bruxelles. Livraison et retour par coursier."
+"Retrait et retour au showroom. Retrait dans les 24h qui suivent la date de retrait prévu dans le bon de commande.","Retrait et retour au showroom. Retrait dans les 24h qui suivent la date de retrait prévu dans le bon de commande."
+"Jours ouvrables du lundi au vendredi hors jours fériés","Jours ouvrables du lundi au vendredi hors jours fériés"
+Next,Next
+"Guest checkout is disabled.","Guest checkout is disabled."
+"Are you sure you would like to remove this item from the shopping cart?","Are you sure you would like to remove this item from the shopping cart?"
+"Saving Time preference.","Saving Time preference."
+Error,Error
+"Error in updating timepreference.","Error in updating timepreference."
+Rentals,Rentals
+"Products Cats","Products Cats"
+"Subscription Product ID","Subscription Product ID"
+"Rental Cats","Rental Cats"
+"Rental Commission percent","Rental Commission percent"
+"Cloths Cats(to show size)","Cloths Cats(to show size)"
+"Default Size","Default Size"
+Discount,Discount
+NotExclusive,NotExclusive
+"Add New Post","Add New Post"
+"Are you sure you wan't to delete selected items?","Are you sure you wan't to delete selected items?"
+ID,ID
+"Purchased From","Purchased From"
+Washed,Washed
+Method,Method
+"Order Status","Order Status"
+State,State
+Customer,Customer
+Owner,Owner
+none,none
+Overview,Overview
+Details,Details
+"More Information","More Information"
+"Guide Des Tailles","Guide Des Tailles"
+Social,Social
+Rental,Rental
+"Mes produits en location","Mes produits en location"
+Moneybox,Moneybox

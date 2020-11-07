@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config>
+   <extension_attributes for="Magento\Quote\Api\Data\CartInterface">
+       <attribute code="rental_data" type="Ibapi\Multiv\Api\Data\QuoteOptionInterface" />
+   </extension_attributes>
+</config>

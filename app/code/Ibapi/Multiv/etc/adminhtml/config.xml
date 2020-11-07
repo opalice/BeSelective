@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <rentals>
+            <procat>
+                <subid>48</subid>
+                <acats>8,4</acats>
+                <ccats>8</ccats>
+                <defs>8</defs>
+ 
+            </procat>
+        </rentals>
+ 
+    </default>
+</config>

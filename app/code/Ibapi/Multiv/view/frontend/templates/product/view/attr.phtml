@@ -1,0 +1,15 @@
+
+<?php if ($block->getProduct()->getData('size')): ?>
+
+
+<div class="product_attr">
+<span class="product_attr_block product_size" id="this-product-size" data-s="<?php echo  $block->getProduct()->getData('size')?>"><?php echo __('Taille:') ?>&nbsp;&nbsp;<?php echo  $block->getProduct()->getData('size')?><?php if($block->getProduct()->getData('size2')):?>
+&nbsp; - &nbsp;<?php echo  $block->getProduct()->getData('size2')?>
+<?php endif;?></span>
+<?php if($block->getProduct()->getData('size2')):?>
+<!-- <span class="product_attr_block product_size" id="this-product-size2" data-s="<?php echo  $block->getProduct()->getData('size2')?>"><?php echo __('Taille2:') ?>&nbsp;<?php echo  $block->getProduct()->getData('size2')?></span> -->
+<?php endif;?>
+</div>
+
+<?php endif; ?> 
+

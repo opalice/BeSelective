@@ -1,0 +1,39 @@
+<?php  $records = $block->getCollection(); // get collection which we set in block class ?>
+<?php if ($records && count($records)): ?>
+    <div class="table-wrapper">
+        <table class="data table" id="reserve-table">
+            <caption class="table-caption"><?php echo __('Grid Record') ?></caption>
+            <thead>
+                <tr>
+                    <th scope="col" class="col id"><?php echo __('ID #') ?></th>
+                    <th scope="col" class="col title"><?php echo __('Title') ?></th>
+                    <th scope="col" class="col date"><?php echo __('SKU') ?></th>
+                    <th scope="col" class="col date"><?php echo __('Start') ?></th>
+					<th scope="col" class="col date"><?php echo __('End') ?></th>
+					<th scope="col" class="col price"><?php echo __('Earning') ?></th>
+
+                    <th scope="col" class="col status"><?php echo __('Status')?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php  // read collection as magento1.x and display in list 
+                       foreach ($records as $record): ?>
+                    <tr>
+                        <td class="col id"><?php echo $record->getId() ?></td>
+                        <td class="col title"><?php echo $record->getProductName() ?></td>
+						<td class="col title"><?php echo $record->getSku() ?></td>
+                        <td class="col date"><?php echo $record->getStart() ?></td>
+                        <td class="col date"><?php echo $record->getRd() ?></td>
+						<td class="col price"><?php echo $record->getC() ?>€</td>
+						<td class="col status"><?php echo $record->getStatus() ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <?php if ($block->getPagerHtml()): ?>
+        <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); // for display pager block which we create in block file.   ?></div>
+    <?php endif ?>
+<?php else: ?>
+    <div class="message info empty"><span><?php echo __('no reservationss.'); ?></span></div>
+<?php endif ?>

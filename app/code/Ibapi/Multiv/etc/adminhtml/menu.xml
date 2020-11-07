@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Ibapi_Multiv::main_menu"
+             title="Rental System"
+             module="Ibapi_Multiv"
+             sortOrder="110"
+             dependsOnModule="Ibapi_Multiv"
+             resource="Ibapi_Multiv::main_menu"
+        />
+        <add id="Ibapi_Multiv::reserve_grid"
+             title="Reservations"
+             module="Ibapi_Multiv"
+             sortOrder="2"
+             resource="Ibapi_Multiv::reserve_grid"
+             parent="Ibapi_Multiv::main_menu"
+             action="multiv/reserve"
+        />
+    </menu>
+</config>

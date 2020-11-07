@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+
+
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">multiv_reserv_grid.reserve_grid_list_data_source</item>
+            <item name="deps" xsi:type="string">multiv_reserv_grid.reserve_grid_list_data_source</item>
+        </item>
+        <item name="spinner" xsi:type="string">spinner_columns</item>
+        <item name="buttons" xsi:type="array">
+            <item name="add" xsi:type="array">
+                <item name="name" xsi:type="string">add</item>
+                <item name="label" xsi:type="string" translate="true">Add New Post</item>
+                <item name="class" xsi:type="string">primary</item>
+                <item name="url" xsi:type="string">*/*/new</item>
+            </item>
+        </item>
+    </argument>
+    <dataSource name="reserve_grid_list_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
+            <argument name="name" xsi:type="string">reserve_grid_list_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="indexField" xsi:type="string">id</item>
+                    </item>
+                </item>
+            </argument>
+        </argument>
+    </dataSource>
+
+
+
+    <container name="listing_top">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="template" xsi:type="string">ui/grid/toolbar</item>
+                <item name="stickyTmpl" xsi:type="string">ui/grid/sticky/toolbar</item>
+            </item>
+        </argument>
+    </container>
+
+   <!-- toolbar  -->
+    <listingToolbar name="listing_top">
+    
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="sticky" xsi:type="boolean">true</item>
+            </item>
+        </argument>
+    
+    
+    	<bookmark name="bookmarks"/>
+    	<columnsControls name="columns_controls"/>
+    	<filterSearch name="fulltext"/>
+    	<filters name="listing_filters" />
+    	<exportButton name="export_button"/>
+    
+    
+        <massaction name="listing_massaction">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/tree-massactions</item>
+                </item>
+            </argument>
+            <action name="delete">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">delete</item>
+                        <item name="label" xsi:type="string" translate="true">Delete</item>
+                        <item name="url" xsi:type="url" path="multiv/reserve/massDelete"/>
+                        <item name="confirm" xsi:type="array">
+                            <item name="title" xsi:type="string" translate="true">Delete</item>
+                            <item name="message" xsi:type="string" translate="true">Are you sure you wan't to delete selected items?</item>
+                        </item>
+                    </item>
+                </argument>
+            </action>
+        </massaction>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </listingToolbar>
+    <!--  main -->
+
+    <columns name="spinner_columns">
+        <selectionsColumn name="ids">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="resizeEnabled" xsi:type="boolean">false</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">55</item>
+                    <item name="indexField" xsi:type="string">id</item>
+                </item>
+            </argument>
+        </selectionsColumn>
+        <column name="id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">textRange</item>
+                    <item name="sorting" xsi:type="string">asc</item>
+                    <item name="label" xsi:type="string" translate="true">ID</item>
+                </item>
+            </argument>
+        </column>
+        <column name="start" class="Magento\Ui\Component\Listing\Columns\Date">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">dateRange</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                    <item name="dataType" xsi:type="string">date</item>
+                    <item name="label" xsi:type="string" translate="true">Start</item>
+                </item>
+            </argument>
+        </column>
+        <column name="end" class="Magento\Ui\Component\Listing\Columns\Date">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">dateRange</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                    <item name="dataType" xsi:type="string">date</item>
+                    <item name="label" xsi:type="string" translate="true">End</item>
+                </item>
+            </argument>
+        </column>
+             <column name="price" class="Ibapi\Multiv\Ui\Component\Listing\Column\Price">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Rent</label>
+                <visible>true</visible>
+         
+            </settings>
+        </column>
+             <column name="deposit" class="Ibapi\Multiv\Ui\Component\Listing\Column\Price">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Deposit</label>
+                <visible>true</visible>
+         
+            </settings>
+        </column>
+        
+                <column name="store_id" class="Magento\Store\Ui\Component\Listing\Column\Store">
+            <settings>
+                <label translate="true">Purchased From</label>
+                <bodyTmpl>ui/grid/cells/html</bodyTmpl>
+                <sortable>false</sortable>
+                <visible>true</visible>
+            </settings>
+        </column>
+        
+          <column name="amount_refunded" class="Ibapi\Multiv\Ui\Component\Listing\Column\Price">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Refunded</label>
+                <visible>true</visible>
+         
+            </settings>
+        </column>
+         <column name="ed" >
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Washed</label>
+                <visible>true</visible>
+         
+            </settings>
+        </column>
+  
+
+
+          <column name="method">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Method</label>
+                <visible>true</visible>
+         
+            </settings>
+        </column>
+          <column name="status">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Order Status</label>
+                <visible>true</visible>
+         
+            </settings>
+        </column>
+          <column name="state">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">State</label>
+                <visible>true</visible>
+         
+            </settings>
+        </column>
+
+          <column name="customer_email">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Customer</label>
+                <visible>true</visible>
+         
+            </settings>
+        </column>
+
+        <column name="owner_email">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Owner</label>
+                <visible>true</visible>
+         
+            </settings>
+        </column>
+        <column name="actions" class="Ibapi\Multiv\Ui\Component\Listing\Column\Refund">
+               
+    <argument name="data" xsi:type="array">
+    <item name="config" xsi:type="array">
+        <item name="sortOrder" xsi:type="number">60</item>
+        <item name="label" translate="true" xsi:type="string">Action</item>
+        <item name="dataType" xsi:type="string">select</item>
+        <item name="bodyTmpl" xsi:type="string">Ibapi_Multiv/orderaction</item>
+        <item name="component" xsi:type="string">Ibapi_Multiv/js/grid/columns/refund</item>
+        
+    </item>
+    </argument>
+    
+            </column>        
+        
+<!-- 
+	   <actionsColumn name="refundaction" class="Ibapi\Multiv\Ui\Component\Listing\Column\Refund">
+	             <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                   <item name="component" xsi:type="string">Ibapi_Multiv/js/grid/columns/refund</item>
+                   <item name="indexField" xsi:type="string">id</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="label" xsi:type="string" translate="true">Action</item>
+                    <item name="sortOrder" xsi:type="number">13</item>
+                </item>
+            </argument>
+        </actionsColumn>
+
+	 <actionsColumn name="actions" class="Ibapi\Multiv\Ui\Component\Listing\Column\RentalActions">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">id</item>
+                </item>
+            </argument>
+        </actionsColumn>        
+
+	   <actionsColumn name="send_mail" class="Ibapi\Multiv\Ui\Component\Listing\Column\Refund">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Ibapi_Multiv/js/grid/columns/refund</item>
+                    <item name="indexField" xsi:type="string">id</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="label" xsi:type="string" translate="true">Refund</item>
+                    <item name="sortOrder" xsi:type="number">433</item>
+                </item>
+            </argument>
+        </actionsColumn>
+
+ -->
+ </columns>
+</listing>   

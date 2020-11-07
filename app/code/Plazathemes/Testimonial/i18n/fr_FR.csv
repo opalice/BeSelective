@@ -1,0 +1,86 @@
+Testimonials,Testimonials
+"Add New Testimonial","Add New Testimonial"
+"Save Testimonial","Save Testimonial"
+Delete,Delete
+"Close Window","Close Window"
+"Save and Continue Edit","Save and Continue Edit"
+"Save and Close","Save and Close"
+"Testimonial Information","Testimonial Information"
+Name,Name
+Job,Job
+"Store View","Store View"
+Email,Email
+Avatar,Avatar
+Website,Website
+Company,Company
+Address,Address
+Testimonial,Testimonial
+Status,Status
+"Testimonial Status","Testimonial Status"
+Order,Order
+"Testimonial ID","Testimonial ID"
+Edit,Edit
+CSV,CSV
+XML,XML
+Excel,Excel
+"Are you sure?","Are you sure?"
+"Change status","Change status"
+"Submit Your Testimonial","Submit Your Testimonial"
+"Delete successfully !","Delete successfully !"
+"This block no longer exists.","This block no longer exists."
+"Edit Testimonial","Edit Testimonial"
+"New Testimonial","New Testimonial"
+"Please select testimonial(s).","Please select testimonial(s)."
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+"A total of %1 record(s) have been changed status.","A total of %1 record(s) have been changed status."
+"The testimonial has been saved.","The testimonial has been saved."
+"Something went wrong while saving the testimonial.","Something went wrong while saving the testimonial."
+"'Slideshow Speed: ' .","'Slideshow Speed: ' ."
+"'Pause Speed: ' .","'Pause Speed: ' ."
+"'Qty of Items: ' .","'Qty of Items: ' ."
+"'Items Default: ' .","'Items Default: ' ."
+"'Items On Desktop: ' .","'Items On Desktop: ' ."
+"'Items On Desktop Small: ' .","'Items On Desktop Small: ' ."
+"'Items On Tablet: ' .","'Items On Tablet: ' ."
+"'items On Mobile: ' .","'items On Mobile: ' ."
+"'Number Rows Show: ' .","'Number Rows Show: ' ."
+Approved,Approved
+"Not Approved","Not Approved"
+Pending,Pending
+Enabled,Enabled
+Disabled,Disabled
+"Use Default Value","Use Default Value"
+"Your Name","Your Name"
+"Your Email","Your Email"
+"Your Website","Your Website"
+"Your Company","Your Company"
+"Your Address","Your Address"
+"Your Avatar","Your Avatar"
+"Your Testimonial","Your Testimonial"
+Submit,Submit
+testimonial,testimonial
+Plazathemes,Plazathemes
+"Testimonial Slider","Testimonial Slider"
+General,General
+Enable,Enable
+"Enable frontend","Enable frontend"
+"Title Testimonial","Title Testimonial"
+"Auto slide:","Auto slide:"
+"Slideshow Speed","Slideshow Speed"
+"Pause Speed","Pause Speed"
+"Qty of Items","Qty of Items"
+"Items Default","Items Default"
+"Items On Desktop","Items On Desktop"
+"Items On Desktop Small","Items On Desktop Small"
+"Items On Tablet","Items On Tablet"
+"items On Mobile","items On Mobile"
+"Number Rows Show","Number Rows Show"
+"Show Description","Show Description"
+"Show Next/Back control","Show Next/Back control"
+"Show navigation control","Show navigation control"
+"Allow customers to submit testimonial","Allow customers to submit testimonial"
+"Allow guest to write testimonials","Allow guest to write testimonials"
+"Approve testimonials","Approve testimonials"
+"Testimonials Per Page","Testimonials Per Page"
+"Enable Footer Link","Enable Footer Link"
+"Our Testimonials","Our Testimonials"

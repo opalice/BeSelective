@@ -1,0 +1,64 @@
+Brands,Brands
+"Add New Brand","Add New Brand"
+"Save Brand","Save Brand"
+Delete,Delete
+"Close Window","Close Window"
+"Save and Continue Edit","Save and Continue Edit"
+"Save and Close","Save and Close"
+"Brand Information","Brand Information"
+Title,Title
+"Store View","Store View"
+Status,Status
+"Brand Status","Brand Status"
+Link,Link
+"Brand Image","Brand Image"
+Description,Description
+Order,Order
+"Brand ID","Brand ID"
+Image,Image
+Edit,Edit
+CSV,CSV
+XML,XML
+Excel,Excel
+"Are you sure?","Are you sure?"
+"Change status","Change status"
+"Delete successfully !","Delete successfully !"
+"This block no longer exists.","This block no longer exists."
+"Edit Brand","Edit Brand"
+"New Brand","New Brand"
+"Please select brand(s).","Please select brand(s)."
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+"A total of %1 record(s) have been changed status.","A total of %1 record(s) have been changed status."
+"The brand has been saved.","The brand has been saved."
+"Something went wrong while saving the brand.","Something went wrong while saving the brand."
+Enabled,Enabled
+Disabled,Disabled
+"'Slideshow Speed: ' .","'Slideshow Speed: ' ."
+"'Pause Speed: ' .","'Pause Speed: ' ."
+"'Qty of Items: ' .","'Qty of Items: ' ."
+"'Items Default: ' .","'Items Default: ' ."
+"'Items On Desktop: ' .","'Items On Desktop: ' ."
+"'Items On Desktop Small: ' .","'Items On Desktop Small: ' ."
+"'Items On Tablet: ' .","'Items On Tablet: ' ."
+"'items On Mobile: ' .","'items On Mobile: ' ."
+"'Number Rows Show: ' .","'Number Rows Show: ' ."
+"Use Default Value","Use Default Value"
+Plazathemes,Plazathemes
+"Brand Slider","Brand Slider"
+General,General
+Enable,Enable
+"Enable frontend","Enable frontend"
+"Title Brand","Title Brand"
+"Auto slide:","Auto slide:"
+"Slideshow Speed","Slideshow Speed"
+"Pause Speed","Pause Speed"
+"Qty of Items","Qty of Items"
+"Items Default","Items Default"
+"Items On Desktop","Items On Desktop"
+"Items On Desktop Small","Items On Desktop Small"
+"Items On Tablet","Items On Tablet"
+"items On Mobile","items On Mobile"
+"Number Rows Show","Number Rows Show"
+"Show Description","Show Description"
+"Show Next/Back control","Show Next/Back control"
+"Show navigation control","Show navigation control"

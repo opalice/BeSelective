@@ -1,0 +1,131 @@
+Category,Category
+"Add New Category","Add New Category"
+"Save and Continue Edit","Save and Continue Edit"
+Content,Content
+"Content Heading","Content Heading"
+"Category Information","Category Information"
+"Category Title","Category Title"
+Status,Status
+"Category Status","Category Status"
+"URL Key","URL Key"
+"Relative to Web Site Base URL(Don't use ""blog"" in URL Key)","Relative to Web Site Base URL(Don't use ""blog"" in URL Key)"
+"Store View","Store View"
+"Please select","Please select"
+Disabled,Disabled
+"Parent Category","Parent Category"
+Position,Position
+"Meta Data","Meta Data"
+Keywords,Keywords
+"Meta Keywords","Meta Keywords"
+Description,Description
+"Meta Description","Meta Description"
+"Start Import","Start Import"
+"Database Name","Database Name"
+"User Name","User Name"
+Password,Password
+"Database Host","Database Host"
+"Table Prefix","Table Prefix"
+Post,Post
+"Add New Post","Add New Post"
+"Short Content","Short Content"
+"Post Information","Post Information"
+"Post Title","Post Title"
+"Thumbnail Image","Thumbnail Image"
+Categories,Categories
+"Post Status","Post Status"
+"Publish At","Publish At"
+ID,ID
+Title,Title
+"Related Posts","Related Posts"
+Name,Name
+SKU,SKU
+Visibility,Visibility
+Websites,Websites
+"Related Products","Related Products"
+Home,Home
+"Go to Home Page","Go to Home Page"
+Blog,Blog
+"Go to Blog Home Page","Go to Blog Home Page"
+"Monthly Archives: %s %s","Monthly Archives: %s %s"
+"Search ""%1""","Search ""%1"""
+"'Manage ' .","'Manage ' ."
+"'Edit ' .","'Edit ' ."
+"'New ' .","'New ' ."
+"'Create ' .","'Create ' ."
+". ' has been saved.'",". ' has been saved.'"
+"Something went wrong while saving this ' . . '.","Something went wrong while saving this ' . . '."
+"'We can't delete ' . . ' right now. ' .","'We can't delete ' . . ' right now. ' ."
+". ' have been deleted.'",". ' have been deleted.'"
+"Parameter ""Status"" missing in request data.","Parameter ""Status"" missing in request data."
+"Status Field Name is not specified.","Status Field Name is not specified."
+"'We can't change status of ' . . ' right now. ' .","'We can't change status of ' . . ' right now. ' ."
+". ' status have been changed.'",". ' status have been changed.'"
+"Blog Import","Blog Import"
+"Blog import type is not specified.","Blog import type is not specified."
+"The import process was completed successfully. %1 posts and %2 categories where imported.","The import process was completed successfully. %1 posts and %2 categories where imported."
+"The import process completed. %1 posts and %2 categories where imported. Some posts or categories where skipped.<br/> %3 %4","The import process completed. %1 posts and %2 categories where imported. Some posts or categories where skipped.<br/> %3 %4"
+"Nothing to import.","Nothing to import."
+"Can not make import.","Can not make import."
+"Something went wrong: ","Something went wrong: "
+"Blog Import from WordPress (beta)","Blog Import from WordPress (beta)"
+"Parameter %1 is required","Parameter %1 is required"
+"Mysql error: %1.","Mysql error: %1."
+Enabled,Enabled
+"Use Facebook Comments","Use Facebook Comments"
+"Use Disqus Comments","Use Disqus Comments"
+"The category URL key contains capital letters or disallowed symbols.","The category URL key contains capital letters or disallowed symbols."
+"The category URL key cannot be made of only numbers.","The category URL key cannot be made of only numbers."
+"The post URL key contains capital letters or disallowed symbols.","The post URL key contains capital letters or disallowed symbols."
+"The post URL key cannot be made of only numbers.","The post URL key cannot be made of only numbers."
+Plazathemes,Plazathemes
+"Blog Slider","Blog Slider"
+Enable,Enable
+"Enable frontend","Enable frontend"
+"Title Blog Slider","Title Blog Slider"
+"Auto slide:","Auto slide:"
+"Slideshow Speed","Slideshow Speed"
+"Pause Speed","Pause Speed"
+"Items Default","Items Default"
+"Items On Desktop","Items On Desktop"
+"Items On Desktop Small","Items On Desktop Small"
+"Items On Tablet","Items On Tablet"
+"items On Mobile","items On Mobile"
+"Number Rows Show","Number Rows Show"
+"Show Next/Back control","Show Next/Back control"
+"Show navigation control","Show navigation control"
+"Blog Index Page","Blog Index Page"
+"Post View","Post View"
+"Display Related Posts","Display Related Posts"
+"Number of Posts","Number of Posts"
+"Display Related Products","Display Related Products"
+"Number of Products","Number of Products"
+Comments,Comments
+"Number of Comments","Number of Comments"
+"Facebook Application ID","Facebook Application ID"
+"<a href=""https://help.yahoo.com/kb/SLN18861.html"" target=""_blank"">
+                                How do I get a Facebook Application ID?
+                            </a>","<a href=""https://help.yahoo.com/kb/SLN18861.html"" target=""_blank"">
+                                How do I get a Facebook Application ID?
+                            </a>"
+"Your Disqus Forum Shortname","Your Disqus Forum Shortname"
+"<a href=""https://help.disqus.com/customer/portal/articles/466208"" target=""_blank"">
+                                What's a shortname?
+                            </a>","<a href=""https://help.disqus.com/customer/portal/articles/466208"" target=""_blank"">
+                                What's a shortname?
+                            </a>"
+"Post List","Post List"
+"Posts Per Page","Posts Per Page"
+Sidebar,Sidebar
+"Search Form Widget","Search Form Widget"
+"Sort Order","Sort Order"
+"Categories Widget","Categories Widget"
+"Recent Posts Widget","Recent Posts Widget"
+"Posts Number","Posts Number"
+"Archive Widget","Archive Widget"
+"Rss Feed","Rss Feed"
+"Feed Title","Feed Title"
+"Feed Description","Feed Description"
+Disable,Disable
+Delete,Delete
+Created,Created
+Modified,Modified

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<preference for ="Magento\Review\Block\Adminhtml\Edit\Form" type="Ibapi\Multiv\Block\Adminhtml\Review\Edit"></preference>
+    <virtualType name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="rental" xsi:type="array">
+                    <item name="class" xsi:type="string">Ibapi\Multiv\Ui\Product\RentalData</item>
+                    <item name="sortOrder" xsi:type="number">100000</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+<!-- 
+      <type name="Ibapi\Multiv\Ui\Product\RentalData">
+        <arguments>
+            <argument name="scopeName" xsi:type="string">product_form.product_form</argument>
+        </arguments>
+    </type>
+-
+<type name="Magento\Catalog\Model\Product\Action">
+        <plugin name="rental_save_before" type="Ibapi\Multiv\Plugin\Rentalsave" sortOrder="1" />
+</type>
+    -->
+
+
+
+
+
+</config>

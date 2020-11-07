@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <multiv_pointpay>
+                <active>1</active>
+                <model>Ibapi\Pointpay\Model\Pointpay</model>
+                <order_status>processing</order_status>
+                <title>Pointpay payment</title>
+                <allowspecific>0</allowspecific>
+            </multiv_pointpay>
+        </payment>
+    </default>
+</config>

@@ -1,0 +1,51 @@
+.collapsibleContainer {
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+
+.collapsibleTab {
+  background: #eee;
+  padding: 1rem;
+  cursor: pointer;
+  border: 1px solid black;
+  font-size: .8rem;
+  font-weight: bold;
+  &:first-child {
+    border-bottom: 1px solid #ddd;
+  }
+  &:nth-last-child(2) {
+    border-top: 1px solid #ddd;
+  }
+}
+
+.collapsibleContent {
+  padding: 1rem 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#preview-panel {
+  background: #fefefe;
+  border-radius: 5px;
+  padding: 2rem;
+  box-shadow: 0 25px 15px -15px rgba(black, .25);
+  max-width: 450px;
+  > p {
+    margin-bottom: 2rem;
+  }
+}
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}

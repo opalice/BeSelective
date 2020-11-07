@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+
+<!-- 
+<evant name="quote_address_save_commit_after">
+<observer name="ibapi_multiv_shipping_save" instance="Ibapi\Multiv\Model\AfterShip"/>
+</evant>
+-->
+<event name="review_save_after">
+        <observer name="ibapi_multiv_review_after" instance="Ibapi\Multiv\Model\AfterReview"/>
+    </event>
+	<event name="review_delete_after">
+        <observer name="ibapi_multiv_review_after" instance="Ibapi\Multiv\Model\AfterReview"/>
+    </event>
+
+	<event name="review_update_after">
+        <observer name="ibapi_multiv_review_update_after" instance="Ibapi\Multiv\Model\AfterReview"/>
+        
+            </event>
+
+<event name="review_controller_product_init_after">
+        <observer name="ibapi_multiv_review_save_before" instance="Ibapi\Multiv\Model\AfterReview"/>
+        
+            </event>
+	<event name="checkout_cart_product_add_after">
+        <observer name="ibapi_multiv_cart_after" instance="Ibapi\Multiv\Model\CartObserver"/>
+    </event>
+    
+    <event name="sales_quote_remove_item">
+        <observer name="multiv_cart_remove" instance="Ibapi\Multiv\Model\CartRemoveObserver"/>
+    </event>
+    <event name="checkout_onepage_controller_success_action" >
+                <observer name="multiv_scu" instance="Ibapi\Multiv\Model\SuccessObserver" />
+    </event>
+    <event name="customer_logout">
+        <observer name="multiv_logout_observer" instance="Ibapi\Multiv\Model\CustomerLogin" />
+    </event>
+    <event name="customer_login">
+        <observer name="multiv_login_observer" instance="Ibapi\Multiv\Model\CustomerLogin" />
+    </event>
+</config>
+

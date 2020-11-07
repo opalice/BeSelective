@@ -1,0 +1,124 @@
+<?php 
+	$helper = $this->helper('Netbaseteam\Faq\Helper\Data');
+	$faqData = $block->getFaqByProductView();
+?>
+
+
+<div id="faq-content">
+	<!--<div class="contact-form">
+		<button id="contact-btn">
+			<span><?php echo __('Ask Us Question'); ?></span>
+		</button>
+	</div> -->
+	<div class="faq-require">
+		<!--<h3 class="faq-require-title"><?php echo __("FAQ's Related"); ?></h3>-->
+
+		<div class="faq-require-main">
+			<?php if ($block->hasFaqByProductView()): ?>
+				<?php foreach ($faqData as $faq): ?>
+					<div class="panel">
+						<div class="panel-heading" style="border: 1px solid rgb(204, 204, 204); background-color: rgb(255, 255, 255);">
+							<h4 class="panel-title" >
+								<i data-icon="fa-plus-square-o" data-icon-active="fa-minus-square-o" class="fa fa-plus-square-o" style="font-size: 15px; color: rgb(0, 0, 0);"></i>
+								<a href="javascript:void(0);" style="font-size: 15px; color: rgb(0, 0, 0);"><?php echo __(strip_tags($faq['question'])); ?></a>
+							</h4>
+						</div>
+						
+						<div class="panel-body">
+							<div class="panel-content"><?php echo __($faq['answer']); ?></div>
+							<div class="more-info">
+								<?php if ($helper->getShowFaqAthor()): ?>
+									<?php if (!empty($faq['author_name'])): ?>
+										<span class="author">
+											<?php echo __('Created by '.$faq['author_name']);?>
+										</span>
+									<?php endif ?>
+								<?php endif ?>
+								<?php if ($helper->getShowFaqCreatedTime()): ?>
+									<?php if (!empty($block->getFormatDate($faq))): ?>
+										<span class="created-time">
+											<?php echo __('on '.$block->getFormatDate($faq));?>
+										</span>
+									<?php endif ?>
+								<?php endif ?>
+							</div>		
+						</div>
+						
+					</div>	
+				<?php endforeach ?>
+				
+				<div class="box-tocart classabo" id="subbox" style="width: 100%;">
+    			<div class="fieldset" style="text-align: center;">
+            	<div class="control-group">
+			
+            	<span style="font-size: 17px;"><?php echo __('Vous avez d\'autres questions?') ?></span>
+            	<span style="font-size: 17px;"><a href="<?php echo $this->getUrl('faq') ?>"><?php echo __('Voir toutes les FAQS') ?></a></span>
+
+            
+
+            	</div>
+   				</div>
+				</div>
+
+			<?php else: ?>
+				<div class="non-result"><?php echo __('No FAQ Founded'); ?></div>
+			<?php endif ?>
+		</div>
+	</div>
+</div>
+<div style="clear: both;"></div>
+<script type="text/javascript">
+	require([
+    'jquery', 
+    'jquery/ui',
+    'Cmsmart_FAQ_Contact_Form'
+    ], function($){
+    	$(document).ready(function(){
+    		var enableShowFaq = "<?php echo $helper->getEnableFaqInProductPage(); ?>";
+    		var faqHeading = $('.faq-require .panel .panel-heading');
+    		if(enableShowFaq == '0'){
+    			$('#tab-label-faqlist').hide();
+    		}
+	    	$(faqHeading).click(function(){
+	    		var icon = $(this).children().find('i');
+	            if($(this).hasClass('panel-active')){
+	               $(this).removeClass('panel-active');
+	            }else{
+	                $(this).addClass('panel-active');
+	            }
+	            if($(icon).hasClass('fa-plus-square-o')){
+	                $(icon).removeClass('fa-plus-square-o');
+	                $(icon).addClass('fa-minus-square-o');
+	            }else{
+	                $(icon).removeClass('fa-minus-square-o');
+	                $(icon).addClass('fa-plus-square-o');
+	            }   
+	            $(this).next().fadeToggle('500',function(){});
+	    	});
+
+	    	$('#contact-btn').click(function(){
+		   		$('#mainform').show();
+			});
+
+
+	    	$('body').click(function(event) {		
+			    if ($('#form:visible').length&&!$(event.target).closest('#contact-btn').length&&!$(event.target).closest('#form').length) {
+			        $('#mainform').hide();
+			    };
+			});
+
+			$('#form .close-btn').click(function(){
+		   		$('#mainform').hide();
+			});
+
+    
+		});
+
+		
+	});
+    	
+  
+
+
+  
+</script>

@@ -1,0 +1,141 @@
+<section data-bind="afterRender:afterRender">
+<h5>stores</h5>
+<div  data-bind="mageInit: {'accordion':{'openedState': 'active', 'collapsible': true, 'active': [0], 'multipleCollapsible': true}} ">
+
+<!-- ko foreach: stores -->
+
+  <div class="collapsibleTab" data-role="collapsible">
+        <div data-role="title">
+            <span data-bind="text: name"></span>
+        </div>
+    </div>
+<div data-bind="attr:{ id: 'tab-'+id}"  data-role="content" class="collapsibleContent">
+
+    <!-- ko with: vars -->
+<div class="form-group">
+    <label>Name</label>
+<input type="text" class="form-control"  name="name" data-bind="value: name">
+  </div>
+
+  <div class="form-group">
+    <label>ShortDescription</label>
+<textarea rows="7" cols="50"  data-bind="value: short_description"></textarea>    
+  </div>
+
+  <div class="form-group">
+    <label>Description</label>
+<textarea rows="7" cols="50" name="description" data-bind="value: description"></textarea>    
+  </div>
+<!-- /ko -->
+</div>  
+  <!-- /ko -->
+
+</div>
+
+<div class="form-group">
+    <label for="rent">Rent (4 day):</label>
+    <input type="text" class="form-control"  name="rent4" data-bind="value: rent4">
+  </div>
+
+ <div class="form-group">
+    <label for="rent">Rent (8 day):</label>
+    <input type="text" class="form-control"  name="rent8" data-bind="value: rent8">
+  </div>
+
+ <div class="form-group">
+    <label for="rental_type">Type:</label>
+<select name="type" id="rental_type" data-bind="value: type">
+<option value="cloth">Cloth</option>
+<option value="accessory">Accessory</option>
+</select>
+  </div>
+
+ <div class="form-group" id="divsize"  >
+    <label for="rental_size">Size:</label>
+<select  id="rental_size" data-bind="value: size, 
+		  options:      sizeopts, 
+          optionsText: 'label', 
+          optionsValue: 'value', 
+
+		visible: type()=='cloth'">
+
+</select>
+<span data-bind="visible: type()=='accessory'">N/A</span>
+
+
+  </div>
+
+
+<div class="form-group" id="divslen"  >
+    <label for="rental_len">Length:</label>
+<select  id="rental_len" data-bind="value: length, 
+		  options:      lenopts, 
+          optionsText: 'label', 
+          optionsValue: 'value' 
+
+	">
+
+</select>
+  </div>
+
+<div class="form-group">
+    <label for="color">Color:</label>
+<select  id="rental_color" data-bind="value: color, 
+		  options:      coloropts, 
+          optionsText: 'label', 
+          optionsValue: 'value'"
+
+>
+
+</select> 
+ 
+ 
+  </div>
+  <div class="form-group">
+    <label for="brand">Brand:</label>
+
+<select  id="rental_brand" data-bind="value: brand, 
+		  options:      brandopts, 
+          optionsText: 'label', 
+          optionsValue: 'value'"
+
+>
+
+</select>
+
+  </div>
+
+
+  <div class="form-group">
+    <label for="price">Price:</label>
+    <input type="text" class="form-control input-text"  data-bind="value: price" >
+  </div>
+  <div class="form-group">
+    <label for="price">Weight:</label>
+    <input type="text" class="form-control input-text"  data-bind="value: weight" >
+  </div>
+
+  <div class="form-group">
+    <label>Deposit</label>
+    <input type="text" class="form-control input-text"  data-bind="value: deposit" >
+
+  </div>
+
+
+  <div class="form-group">
+    <label>Category</label>
+ <div id="cattree">
+ 
+ </div>
+  </div>
+
+  
+
+ <div class="primary">
+        <button type="button" class="action action-login secondary" data-bind="click: submitProduct">
+            <span data-bind="i18n: 'Save'">Save</span>
+        </button>
+    </div>
+ 
+
+</section>

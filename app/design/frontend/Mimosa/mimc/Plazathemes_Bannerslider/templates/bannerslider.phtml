@@ -1,0 +1,20 @@
+<?php
+/**
+ * Copyright © 2015 PlazaThemes.com. All rights reserved.
+
+ * @author PlazaThemes Team <contact@plazathemes.com>
+ */
+ 
+if($this->getEnable()):
+$banners = $block->getBannerSlider();
+
+echo $this->getLayout()
+          ->createBlock('Magento\Cms\Block\Block')
+          ->setBlockId('slider_home')
+          ->toHtml();
+
+?>
+
+<div class="pt-banner-container">
+
+<?php endif; ?>

@@ -1,0 +1,24 @@
+#divdtdialog{
+	width:600px;
+	height:600px;
+
+}
+
+div.advopts{
+    font-size: 12px;
+    line-height: 18px;
+    color: #707070;
+    padding: 0 0 0 40px;
+    float: left;
+	
+	
+}
+
+div.advopts div {
+	
+    display: block;
+    line-height: 26px;
+    margin: 0;
+    padding: 8px 0 0;
+    vertical-align: middle;
+}

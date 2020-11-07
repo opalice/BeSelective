@@ -1,0 +1,34 @@
+<?php  $_gridrecords = $block->getCollection(); // get collection which we set in block class ?>
+<?php if ($_gridrecords && count($_gridrecords)): ?>
+    <div class="table-wrapper orders-history">
+        <table class="data table" id="my-reservations">
+            <caption class="table-caption"><?php echo __('Reservations') ?></caption>
+            <thead>
+                <tr>
+                    <th scope="col" class="col id"><?php echo __('ID #') ?></th>
+					<th scope="col" class="col title"><?php echo __('Product #') ?></th>
+                    <th scope="col" class="col date"><?php echo __('Start') ?></th>
+                    <th scope="col" class="col date"><?php echo __('End') ?></th>
+            		<th scope="col" class="col price"><?php echo __('Commission') ?></th>
+                    <th scope="col" class="col status"><?php __('Status')?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php  // read collection as magento1.x and display in list 
+                       foreach ($_gridrecords as $_gridrecord): ?>
+                    <tr>
+                        <td class="col id"><?php echo $_gridrecord->getId() ?></td>
+                        <td class="col product"><?php echo $_gridrecord->getProduct() ?></td>
+                        <td class="col date"><?php echo $block->formatDate($_gridrecord->getPublishDate()) ?></td>
+                        <td class="col status"><?php echo $_gridrecord->getIsActive() ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <?php if ($block->getPagerHtml()): ?>
+        <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); // for display pager block which we create in block file.   ?></div>
+    <?php endif ?>
+<?php else: ?>
+    <div class="message info empty"><span><?php echo __('reservation datas records not available.'); ?></span></div>
+<?php endif ?>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config>
+    <adminhtml>
+        <events>
+            <customer_address_format>
+                <observers>
+                    <clientname_sales_customer_address_format_observer>
+                        <type>model</type>
+                        <class>opalice_sales/observer</class>
+                        <method>addAdditionalDataToAddress</method>
+                    </clientname_sales_customer_address_format_observer>
+                </observers>
+            </customer_address_format>
+        </events>
+    </adminhtml>
+</config>

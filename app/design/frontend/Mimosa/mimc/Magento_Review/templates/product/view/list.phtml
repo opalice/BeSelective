@@ -1,0 +1,86 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var $block Magento\Review\Block\Product\View\ListView  */
+
+$_items = $block->getReviewsCollection()->getItems();
+$format = $block->getDateFormat() ?: \IntlDateFormatter::SHORT;
+?>
+<?php if (count($_items)):?>
+<div class="block review-list" id="customer-reviews">
+    <div class="block-title">
+        <strong><?= $block->escapeHtml(__('Customer Reviews')) ?></strong>
+    </div>
+    <div class="block-content">
+        <div class="toolbar review-toolbar">
+            <?= $block->getChildHtml('toolbar') ?>
+        </div>
+        <div class="items review-items" style="display:  block;">
+    <?php $cnt=0;?>
+        <?php foreach ($_items as $_review):?>
+            <div class="item review-item" itemscope itemprop="review" itemtype="http://schema.org/Review" style="<?php if($cnt++%2==0): ?> <?php endif; ?>">
+                 <img src="<?= $block->getReviewImg($_review) ?>" class="review-details-value" itemprop="img">
+
+                 <p class="review-details-value author-review" itemprop="author"><?= $block->escapeHtml($_review->getNickname()) ?></p>
+				 	<div style="display: flex;flex-basis: row">
+                
+                             <?php if (count($_review->getRatingVotes())): ?>
+                     <?php 
+                     $vp=0;
+                     foreach ($_review->getRatingVotes() as $_vote): 
+                     $vp+=$_vote->getPercent();
+                     endforeach;;
+                     
+                     $vp=$vp/count($_review->getRatingVotes());
+                     
+                     ?>
+ 	<?php else:?>
+ 	<?php $vp=100;?>
+ <?php endif; ?>
+    
+      <div class="rating-summary">
+        <!-- <span class="label"><span><?php /* @escapeNotVerified */ echo __('Rating') ?>:</span></span>-->
+         <div class="rating-result" title="<?php /* @escapeNotVerified */ echo $vp; ?>%">
+             <span style="width:<?php /* @escapeNotVerified */ echo $vp; ?>%"><span><span ><?php /* @escapeNotVerified */ echo $vp; ?></span>% of <span>100</span></span></span>
+         </div>
+     </div>
+     
+     
+  
+     
+     	            <div class="review-date">
+        
+                             <time class="review-details-value" itemprop="datePublished" datetime="<?= $block->escapeHtmlAttr($block->formatDate($_review->getCreatedAt(), $format)) ?>"><?= $block->escapeHtml($block->formatDate($_review->getCreatedAt(), $format)) ?></time>
+     				</div>
+     				
+     
+     </div> <!-- -rating and dt -->
+                
+                
+                <div class="review-title" itemprop="name"><?= $block->escapeHtml($_review->getTitle()) ?></div>
+                
+        		<div style="display: flex; flex-basis:  row">        
+                <div class="review-content" itemprop="description">
+                    <?= nl2br($block->escapeHtml($_review->getDetail())) ?>
+                </div>
+                <div class="review-details" style="margin-left:auto;margin-right:1px;">
+                 
+                    
+                </div>
+                </div><!-- det and pic -->
+                
+                
+            </div><!--  review items -->
+        <?php endforeach; ?>
+        </div><!--  review items -->
+        <div class="toolbar review-toolbar">
+            <?= $block->getChildHtml('toolbar') ?>
+        </div>
+    </div>
+</div>
+<?php endif;?>

@@ -1,0 +1,181 @@
+<div id="divdtdialog"  style="display:none">
+
+  <div class="moblock">
+    <div  class="prev"> <a id="prevmo" class="cal_pn" href="#">&lt;</a></div>
+        <div class="centercon">
+      <span id="calmo"></span>&nbsp;<span id="calyr"></span>
+      </div>    
+        
+        <div class="next" ><a id="nextmo" class="cal_pn" href="#">&gt;</a></div>
+    </div>
+
+<div id="rentalblock" class="datepicker table-responsive row">
+
+
+
+    <table class="cal table table-bordered" id="tblrent" width="100%">
+         
+    <thead>
+        <tr>
+          <th data-d="0"><?php echo __('Mon')?></th>
+          <th data-d="1"><?php echo __('Tue')?></th>
+          <th data-d="2"><?php echo __('Wed')?></th>
+          <th data-d="3"><?php echo __('Thu')?></th>
+          <th data-d="4"><?php echo __('Fri')?></th>
+          <th data-d="5"><?php echo __('Sat')?></th>
+          <th data-d="6"><?php echo __('Sun')?></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td ><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td ><a href="#"></a></td>
+          <td data-zz="1" class="dtthu"><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-z="1"><a href="#"></a></td>
+          <td data-z="1"><a href="#"></a></td>
+        </tr>
+        <tr>
+          <td><a href="#"></a></td>
+          <td><a  href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-zz="1" class="dtthu"><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-z="1"><a href="#"></a></td>
+          <td data-z="1"><a href="#"></a></td>
+        </tr>
+        <tr>
+          <td><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-zz="1" class="dtthu"><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-z="1"><a href="#"></a></td>
+          <td data-z="1"><a href="#"></a></td>
+        </tr>
+        <tr>
+          <td><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-zz="1" class="dtthu"><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-z="1"><a href="#"></a></td>
+          <td data-z="1"><a href="#"></a></td>
+        </tr>
+        <tr>
+          <td ><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-zz="1" class="dtthu"><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-z="1"><a href="#"></a></td>
+          <td data-z="1"><a href="#"></a></td>
+        </tr>
+        <tr>
+          <td  ><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-zz="1" class="dtthu"><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-z="1"><a href="#"></a></td>
+          <td data-z="1"><a href="#"></a></td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+<div id="rnleg" >
+<ul>
+<li><span class="blocked"></span><span><?php echo __('Not available or blocked')?></span></li>
+<li><span class="blockstart block"></span><span><?php echo __('Start of your booking')?></span></li>
+<li><span class="block"></span><span><?php echo __('your booking.')?></span></li>
+
+<li><span class="block blockend"></span><span><?php echo __('End of your booking.')?></span></li>
+<li><span class="av" style="background-color: white;border:1px solid grey">&nbsp;</span><span><?php echo __('Available for booking.')?></span></li>
+</ul>
+</div>
+
+
+</div>
+
+<div class="row" id="btns" style="display: none;">
+<div class="centercon" style="display: block;">
+<button id="btncls" class="btn btn-medium"   id="btncls"><?php echo __('Close')?></button>
+
+<button id="btnsrc" class="btn btn-medium"   id="btnsrc"><?php echo __('Apply')?></button>
+</div>
+</div>
+
+
+
+</div>
+
+
+
+<!-- 
+<div class="row">
+Rent <span id="rentshow" class="rentalprice"></span>
+Deposit: <span id="depshow"></span>
+</div>
+-->
+
+<div id="dtcontent" class="row">
+
+<div class="col-md-4">
+
+<span class="dureelocation"><?php echo __('Durée de location :') ?></span>
+
+<div>
+<input type="radio" id="rentp_4" name="p" value="4" class="rentp">4 <?php echo __('jours de location :') ?> 
+</div>
+
+<div>
+<input type="radio" id="rentp_8" name="p" value="8" class="rentp">8 <?php echo __('jours de location :') ?>  
+
+</div>
+
+</div>
+<div class="col-md-6 toolbaropts advopts">
+
+  <div  class="datedialog">
+        <p><span class="topbarperiod">&nbsp;<?php echo __('Période') ?>&nbsp;</span>
+        <span class="spnsd"></span>
+        <strong>&nbsp;<?php echo __('au') ?>&nbsp;</strong>
+        <span class="spned"></span>
+        
+        </p>
+        
+        </div>
+        
+        </div>
+      
+<div class="col-md-6 toolbaropts advopts2" style="display: none">
+    <p class="pper" style="display: none"><?php echo __('checkout not available for this product.')?></p>
+        <p class="fper"><span class="period">&nbsp;<?php echo __('Période') ?>&nbsp;</span>
+        <span class="spnsd"></span>
+        <strong>&nbsp;<?php echo __('au') ?>&nbsp;</strong>
+        <span class="spned"></span>
+        
+        </p>
+        
+        
+        </div>
+</div>
+
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "datecontent": {
+                            "component":  "Ibapi_Multiv/js/product" ,
+                            "template" : "Ibapi_Multiv/size",
+                            "options":   <?= $block->getConfig(); ?>
+                        }
+                    }
+                }
+            }
+        }
+</script>

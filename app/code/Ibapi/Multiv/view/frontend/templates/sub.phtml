@@ -1,0 +1,25 @@
+<!--ko scope: 'minicart_content' -->
+<!-- <div data-bind="visible: hasPurchased()">
+<?php echo __('You can purchase in this range only:')?>
+<span id="multiv_purch"  data-bind="attr: {'data-sd': startDate(),'data-r':duration()}  ,text:startDate()"></span>To<span data-bind="text:endDate()"></span> 
+</div>-->
+<?php if($this->canShow()):?>
+<div class="box-tocart classabo" id="subbox">
+
+    <div class="fieldset">
+            <div class="control-group">
+			
+            <span><input type="checkbox" value="1" id="multiv_sub" name="multiv_sub" class="form-control"> <?php /* @escapeNotVerified */ echo __('Subscribe to premium and get 15%') ?></span>
+            
+
+            </div><span><a href="<?php echo $block->getUrl('membre-be-selective'); ?>"><?php echo __('More informations') ?></a></span>
+   </div>
+</div>
+<?php endif;?>
+<!-- /ko -->
+<input type="hidden" name="rental_option"  id="dater" />
+
+
+
+
+

@@ -1,0 +1,51 @@
+<?php $_products = $block->getProducts(); ?>
+<div>
+
+                            <!--<a href="<?= /* @escapeNotVerified */ $block->getEditUrl() ?>" class="action view">
+                                <span><?= /* @escapeNotVerified */ __('Create New Product') ?>
+                            </a>-->
+
+</div>
+<?php echo $block->getChildHtml('info') ?>
+<?php if ($_products && count($_products)): ?>
+    <div class="table-wrapper products">
+        <table class="data table table-products-items products" id="my-products-table">
+            <caption class="table-caption"><?= /* @escapeNotVerified */ __('Products') ?></caption>
+            <thead>
+                <tr>
+                    <th scope="col" class="col id"><?= /* @escapeNotVerified */ __('SKU') ?></th>
+                    <?= /* @noEscape */ $block->getChildHtml('extra.column.header') ?>
+                    <th scope="col" class="col shipping"><?= /* @escapeNotVerified */ __('Name') ?></th>
+                    <th scope="col" class="col total"><?= /* @escapeNotVerified */ __('Rent') ?></th>
+                    <th scope="col" class="col status"><?= /* @escapeNotVerified */ __('Status') ?></th>
+                    <th scope="col" class="col actions"><?= /* @escapeNotVerified */ __('Action') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($_products as $_product): ?>
+                    <tr>
+                        <td data-th="<?= $block->escapeHtml(__('SKU')) ?>" class="col id"><?= /* @escapeNotVerified */ $_product->getSku() ?></td>
+                        <td data-th="<?= $block->escapeHtml(__('Name')) ?>" class="col name"><?= /* @escapeNotVerified */  $_product->getName() ?></td>
+                        <td data-th="<?= $block->escapeHtml(__('Rent')) ?>" class="col rent"><?= $_product->getData('rent') ?></td>
+                        <td data-th="<?= $block->escapeHtml(__('Status')) ?>" class="col status"><?= $_product->getStatus()?'Active':'Inactive' ?></td>
+                        <td data-th="<?= $block->escapeHtml(__('Actions')) ?>" class="col actions">
+                            <a href="<?= /* @escapeNotVerified */ $block->getViewUrl($_product) ?>" class="action view">
+                                <span><?= /* @escapeNotVerified */ __('View Product') ?></span>
+                            </a>
+                            <?php if(!$_product->getStatus()): ?>
+                             <a href="<?= $block->getEditUrl($_product) ?>"  class="action edit">
+                                    <span><?= /* @escapeNotVerified */ __('Edit') ?></span>
+                             </a>
+                             <?php endif; ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <?php if ($block->getPagerHtml()): ?>
+        <div class="products-toolbar toolbar bottom"><?= $block->getPagerHtml() ?></div>
+    <?php endif ?>
+<?php else: ?>
+    <div class="message info empty"><span><?= /* @escapeNotVerified */ __('You have no products.') ?></span></div>
+<?php endif ?>

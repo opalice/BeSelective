@@ -1,0 +1,43 @@
+<!--The 'step_code' value from the .js file should be used-->
+<li id="step_timerange" data-bind="fadeVisible: isVisible">
+<div class="step-title"><!-- ko i18n: 'Informations de livraison'--><!-- /ko --></div>
+
+    <div class="step-content">
+
+<table style="width:100%;text-align: left;padding: 8px;">
+  <tr>
+    <th style="color: #000!important;font-size: 14px; font-weight: 600; text-transform: uppercase; padding-bottom: 12px;"><!-- ko i18n: 'Livraison standard' --><!-- /ko -->:</th>
+  </tr>
+  <tr>
+    <td style="padding-bottom: 24px;"><!-- ko i18n: 'Livraison dans les 48h en Belgique (2 jours ouvrables). Retour par coursier sur Bruxelles et retour à un point relais en dehors de Bruxelles.'--><!-- /ko --></td>
+  </tr>
+</table>
+
+<table style="width:100%;text-align: left;padding: 8px;">
+  <tr>
+    <th style="color: #000!important;font-size: 14px; font-weight: 600; text-transform: uppercase; padding-bottom: 12px;"><!-- ko i18n: 'Livraison express'--><!-- /ko -->:</th>
+  </tr>
+  <tr>
+    <td style="padding-bottom: 24px;"><!-- ko i18n: 'Livraison dans les 24h uniquement dans les 19 communes de Bruxelles. Livraison et retour par coursier.'--><!-- /ko --></td>
+  </tr>
+</table>
+
+<table style="width:100%;text-align: left;padding: 8px;">
+  <tr>
+    <th style="color: #000!important;font-size: 14px; font-weight: 600; text-transform: uppercase; padding-bottom: 12px;">Click &amp; collect:</th>
+  </tr>
+  <tr>
+    <td style="padding-bottom: 24px;"><!-- ko i18n: 'Retrait et retour au showroom. Retrait dans les 24h qui suivent la date de retrait prévu dans le bon de commande.'--><!-- /ko --></td>
+  </tr>
+</table>
+
+<p style="padding-bottom: 70px;margin-bottom: 0px !important;">*<!-- ko i18n: 'Jours ouvrables du lundi au vendredi hors jours fériés'--><!-- /ko --></p>
+
+<form data-bind="submit: navigateToNextStep" novalidate="novalidate">
+                    <button style="float: right;" data-role="opc-continue" type="submit" class="button action continue primary">
+                        <span><!-- ko i18n: 'Next'--><!-- /ko --></span>
+                    </button>
+</form> 
+
+    </div>
+</li>

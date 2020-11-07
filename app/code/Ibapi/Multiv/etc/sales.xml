@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Sales:etc/sales.xsd">
+   
+<section name="quote">
+        <group name="totals">
+            <item name="vipdiscount" instance="Ibapi\Multiv\Model\Total\VipDiscount" sort_order="600"/>
+			<item name="viscount" instance="Ibapi\Multiv\Model\Total\Viscount" sort_order="1111601"/>
+            <item name="tiscount" instance="Ibapi\Multiv\Model\Total\Tiscount" sort_order="1111600"/>
+	</group>
+</section>
+<section name="order_invoice">
+        <group name="totals">
+            <item name="vipdiscount" instance="Ibapi\Multiv\Model\Invoice\Total\VipDiscount" sort_order="600"/>
+		    <item name="viscount" instance="Ibapi\Multiv\Model\Invoice\Total\Viscount" sort_order="1111601"/>
+            <item name="tiscount" instance="Ibapi\Multiv\Model\Invoice\Total\Tiscount" sort_order="1111600"/>
+        </group>
+    </section>
+    <section name="order_creditmemo">
+        <group name="totals">
+            <item name="vipdiscount" instance="Ibapi\Multiv\Model\Creditmemo\Total\VipDiscount" sort_order="600"/>
+			<item name="viscount" instance="Ibapi\Multiv\Model\Creditmemo\Total\Viscount" sort_order="1111601"/>
+
+            <item name="tiscount" instance="Ibapi\Multiv\Model\Creditmemo\Total\Tiscount" sort_order="1111600"/>
+        </group>
+    </section>
+
+
+</config>

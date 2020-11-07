@@ -1,0 +1,6 @@
+cannot checkout with this item.
+<script type="text/javascript">
+window.checkoutConfig='<?php echo \Zend_Json::encode($this->getCheckoutConfig())?>';
+window.customerData = window.checkoutConfig.customerData;
+window.isCustomerLoggedIn = window.checkoutConfig.isCustomerLoggedIn;
+</script>

@@ -1,0 +1,69 @@
+
+<div class="container">
+<div class="row" style="height:200px">&nbsp;
+<h4>Product Form</h4>
+</div>
+</div>
+<div class="container">
+
+<form id="fileupload" class="form" action="<?php echo $this->getFormUrl()?>" method="POST" enctype="multipart/form-data">
+
+
+<div class="row">
+
+    <div class="col-md-4 fileupload-buttonbar">
+            <span class="btn btn-success fileinput-button">
+                <i class="glyphicon glyphicon-plus"></i>
+                <span>Add files...</span>
+                <input type="file" id="myfile" name="files[]" multiple>
+            </span>
+            <span class="fileupload-process"></span>
+    <div data-bind="scope:'multivimages'">
+<!-- ko template: getTemplate() --><!-- /ko -->
+    </div>
+    
+    
+    </div>
+    
+	<div class="col-md-6" data-bind="scope:'multivform'">
+<!-- ko template: getTemplate() --><!-- /ko -->
+	</div>
+
+</form>
+
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "multivform": {
+                    "component": "Ibapi_Multiv/js/productform",
+                    "template" : "Ibapi_Multiv/productform",
+
+                    "data": <?php echo $this->getProductData() ?>
+                },
+                "multivimages":{
+            
+                    "component": "Ibapi_Multiv/js/images",
+                    "template" : "Ibapi_Multiv/images",
+
+                    "data": <?php echo $this->getProductImages() ?>
+
+                }
+
+            }
+        }
+    }
+}
+</script>
+
+
+<script type="text/x-magento-init">
+{
+    "#fileupload": {
+        "Ibapi_Multiv/js/uploader":<?php echo $this->getConfig() ?>
+    }
+}
+</script>
+
+</div>

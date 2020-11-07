@@ -1,0 +1,15 @@
+<table class="tblextrasku" data-c="<?php echo $block->getCloth() ?>" data-x="<?php echo $block->getDis(1) ?>" data-r="<?php echo strip_tags($block->getRent(1)); ?>" data-d="<?php echo strip_tags($block->getDeposit(1))?>"> <!--  id same -->
+<tbody>
+<!--  td must be kept otherwise inform me -->
+<tr><th><?php echo __('Rent') ?></th><td ><?php echo $block->getRent(); ?></td></tr>
+<tr><th><?php echo __('Deposit') ?></th><td><?php echo $block->getDeposit(); ?></td></tr>
+<tr><td colspan="2" style="text-align: left"><?php echo __('Date') ?>:&nbsp;<?php echo $block->getFrom()?>&nbsp;<i><?php echo __('To')?></i>&nbsp;<?php echo $block->getTo() ?> 
+<tr><td id="extrainfob" style="text-align:left" colspan="2" >Buy within: 
+ <!--ko scope: 'minicart_content'-->
+	 <span  data-bind="text:getTimeLeft()">
+	</span>
+    <!--  /ko -->
+</td></tr>
+</tbody>
+</table>
+

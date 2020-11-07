@@ -1,0 +1,49 @@
+Banners,Banners
+"Add New Banner","Add New Banner"
+"Save Banner","Save Banner"
+Delete,Delete
+"Close Window","Close Window"
+"Save and Continue Edit","Save and Continue Edit"
+"Save and Close","Save and Close"
+"Banner Information","Banner Information"
+Name,Name
+"Store View","Store View"
+"Title 1","Title 1"
+"Title 2","Title 2"
+Status,Status
+"Banner Status","Banner Status"
+"Alt Text","Alt Text"
+URL,URL
+"Banner Image","Banner Image"
+Description,Description
+Order,Order
+"Banner ID","Banner ID"
+Image,Image
+Edit,Edit
+CSV,CSV
+XML,XML
+Excel,Excel
+"Are you sure?","Are you sure?"
+"Change status","Change status"
+"Delete successfully !","Delete successfully !"
+"This block no longer exists.","This block no longer exists."
+"Edit Banner","Edit Banner"
+"New Banner","New Banner"
+"Please select banner(s).","Please select banner(s)."
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+"A total of %1 record(s) have been changed status.","A total of %1 record(s) have been changed status."
+"The banner has been saved.","The banner has been saved."
+"Something went wrong while saving the banner.","Something went wrong while saving the banner."
+Enabled,Enabled
+Disabled,Disabled
+"Use Default Value","Use Default Value"
+name,name
+title1,title1
+description,description
+title2,title2
+"+ shop now","+ shop now"
+Plazathemes,Plazathemes
+"Banner Slider","Banner Slider"
+General,General
+Enable,Enable
+"Enable frontend","Enable frontend"

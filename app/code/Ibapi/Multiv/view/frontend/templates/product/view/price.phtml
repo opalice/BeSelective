@@ -1,0 +1,7 @@
+<div style="display:flex;flex-direction: row;">
+<div><span class="productrentprice"><?php echo $this->formatPrice($this->getRent())?></span></div>
+
+<div><span class="productrentprice2">&nbsp;<?php echo $this->formatPrice($this->getPrice())?>&nbsp;<?php echo __('en boutique') ?></span></div>
+<div><span class="productrentprice3">&nbsp;|&nbsp;<?php echo __('caution') ?>:&nbsp;<?php echo $this->formatPrice($this->getDeposit())?>&nbsp;<?php echo __('(non encaissée)') ?></span></div>
+
+</div>

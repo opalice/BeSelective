@@ -1,0 +1,26 @@
+<!-- ko -->
+<tr class="totals rental d2 excl" data-bind="visible: isDisplayed()">
+    <th scope="row">
+    <span data-bind="i18n: 'Rent'"></span>
+    </th>
+    <td class="amount">
+        <span class="price" data-bind="text: getRent()"></span>
+    </td>
+</tr>
+<tr class="totals rental d2 excl" data-bind="visible: isDisplayed()">
+    <th  scope="row">
+<span data-bind="i18n: 'Deposit'"></span>    
+    </th>
+    <td class="amount">
+        <span class="price" data-bind="text: getDepo()"></span>
+    </td>
+</tr>
+<tr class="totals rental d2 excl" data-bind="visible: hasCloth()">
+    <th  scope="row">
+<span data-bind="i18n: 'Press'"></span>    
+    </th>
+    <td class="amount">
+        <span class="price" data-bind="text: getPress()"></span>
+    </td>
+</tr>
+<!-- /ko -->

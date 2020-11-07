@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+     <preference for="Magento\Catalog\Block\Product\ReviewRendererInterface" type="Ibapi\Multiv\Block\Product\ReviewRenderer" />
+    <preference for="Magento\Bundle\Block\Sales\Order\Items\Renderer"
+                type="\Ibapi\Multiv\Block\Sales\Order\Items\Renderer"/>
+    <preference for="Magento\CatalogInventory\Observer\QuantityValidatorObserver" type="\Ibapi\Multiv\Model\QtyVld"/>
+	<preference for="Magento\Framework\DB\LoggerInterface" type="Magento\Framework\DB\Logger\File"/>	
+<preference for="\Ibapi\Multiv\Api\Data\OptionInterface" type="\Ibapi\Multiv\Model\Extension\ProductOption" />
+	<preference for="\Ibapi\Multiv\Api\Data\QuoteOptionInterface" type="\Ibapi\Multiv\Model\Extension\QuoteOption" />
+    <preference for="Magento\SalesRule\Model\Quote\Discount" type="\Ibapi\Multiv\Model\Discount" ></preference>
+    <!--
+        <preference for="Magento\Bundle\Helper\Catalog\Product\Configuration" type="Ibapi\Multiv\Helper\Catalog\Product\Bundleconfig"/>
+
+
+    <type name="Magento\Framework\Pricing\Render\Amount">
+        <plugin name="multiv_framework_pricing_render_amount" type="\Ibapi\Multiv\Plugin\Price\Amount" />
+    </type>
+    <type name="Magento\Directory\Model\PriceCurrency">
+        <plugin name="multiv_directory_model_pricecurrency" type="\Ibapi\Multiv\Plugin\Price\PriceCurrenc" />
+    </type>
+    <type name="Magento\Framework\Locale\Format">
+        <plugin name="multiv_framework_locale_format" type="\Ibapi\Multiv\Plugin\Price\Format" />
+    </type>
+-->
+<!--
+
+    <type name="Magento\Catalog\Pricing\Price\RegularPrice">
+        <arguments>
+            <argument name="priceCurrency" xsi:type="object">Ibapi\Multiv\Model\PriceCurrency</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Tax\Model\Calculation">
+        <arguments>
+            <argument name="priceCurrency" xsi:type="object">Ibapi\Multiv\Model\PriceCurrency</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Quote\Model\Quote\Item">
+        <arguments>
+            <argument name="priceCurrency" xsi:type="object">Ibapi\Multiv\Model\PriceCurrency</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Developer\Model\TemplateEngine\Plugin\DebugHints">
+        <arguments>
+            <argument name="debugHintsPath" xsi:type="string">dev/debug/template_hints_storefront</argument>
+        </arguments>
+    </type>
+ -->
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="ibapi_multiv_command_cust" xsi:type="object">Ibapi\Multiv\Command\CustomerChangePasswordCommand</item>
+
+                <item name="ibapi_multiv_command_testbed" xsi:type="object">Ibapi\Multiv\Command\Testbed</item>
+				<item name="ibapi_multiv_command_pay" xsi:type="object">Ibapi\Multiv\Command\Pay</item>
+				<item name="ibapi_multiv_command_quote" xsi:type="object">Ibapi\Multiv\Command\Quote</item>
+            </argument>
+        </arguments>
+    </type>
+    
+    
+    
+     <type name="Magento\Catalog\Model\Product\CartConfiguration">
+        <plugin name="multiv_cart_config" type="Ibapi\Multiv\Plugin\Cart\Config" />
+    </type>
+    
+    <!-- 
+	<type name="\Magento\Quote\Model\Quote\Address\RateCollectorInterface">
+        <plugin name="multiv_shipping_collection" type="Ibapi\Multiv\Plugin\Shipping\Rateinf" />
+	</type>
+	-->
+<!--
+     <preference for="Magento\Framework\Mail\TransportInterface" type="\Ibapi\Multiv\Model\Transport" />
+-->
+    <!--
+        <type name="Magento\Quote\Api\Data\CartInterface">
+        <plugin name="get_rental_data" type="Ibapi\Multiv\Plugin\Cart\CartGet"/>
+    </type>
+    -->
+    
+    <type name="Magento\Quote\Model\QuoteRepository\LoadHandler">
+		<plugin name="get_rental_data" type="Ibapi\Multiv\Plugin\Cart\QuoteLoad"/>    
+    </type>
+        <type name="Magento\Quote\Model\Quote\Item\Repository">
+        <arguments>
+            <argument name="cartItemProcessors" xsi:type="array">
+                <item name="multivcartp" xsi:type="object">Ibapi\Multiv\Model\Quote\Item\CartItemProcessor</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Developer\Model\TemplateEngine\Plugin\DebugHints">
+        <arguments>
+            <argument name="debugHintsPath" xsi:type="string">dev/debug/template_hints_storefront</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Sales\Api\OrderItemRepositoryInterface">
+        <arguments>
+            <argument name="processorPool" xsi:type="array">
+                <item name="multiproc" xsi:type="object">Ibapi\Multiv\Model\ProductOptionProcessor</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Ibapi\Multiv\Helper\Data">
+    
+            <arguments>
+            <argument name="session" xsi:type="object">Magento\Customer\Model\Session</argument>
+            <argument name="tmpFolder" xsi:type="string">/new</argument>
+            <argument name="imgFolder" xsi:type="string">/customerimg</argument>
+    	    </arguments>
+    
+    </type>
+    
+    
+    
+      <type name="Ibapi\Multiv\Model\ResourceModel\Reserve\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">multiv_res</argument>
+            <argument name="eventPrefix" xsi:type="string">multiv_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">multiv_grid_records_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Ibapi\Multiv\Model\ResourceModel\Reserve</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <!--data provider name which used in grid ui component file -->
+                <item name="reserve_grid_list_data_source" xsi:type="string">Ibapi\Multiv\Model\ResourceModel\Reserve\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Catalog\Model\Layer">
+<!--         <plugin name="addStockStatusOnPrepareFrontCollection" type="Magento\CatalogInventory\Model\Plugin\Layer"/> -->
+        <plugin name="addStockStatusOnPrepareFrontCollection" disabled="true" />
+
+    </type>
+
+
+
+<preference for="Magento\CatalogSearch\Model\ResourceModel\Fulltext\Collection" type="\Ibapi\Multiv\Model\ResourceModel\FullText\Collection"/>
+
+<!--
+
+<type name="Magento\Framework\DB\Logger\File">
+  <arguments>
+      <argument name="logAllQueries" xsi:type="boolean">true</argument>
+      <argument name="debugFile" xsi:type="string">sql.log</argument>
+  </arguments>
+</type>
+   -->
+
+</config>

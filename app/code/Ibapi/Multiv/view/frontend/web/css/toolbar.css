@@ -1,0 +1,408 @@
+.toolbaropts{
+
+#    font-size: 12px;
+    line-height: 18px;
+    color: #707070;
+    padding: 0 0 0 40px;
+    float: left;
+	cursor: pointer;
+	}
+	.toolbaropts .sizedialog{
+
+		float:left;
+
+	}
+.toolbaropts .datedialog{
+		padding-left:50px;
+		float:left;
+    height: 30px;
+    top: -5px;
+    position: relative;
+    background: url(../img/searchcalendar.svg);
+    height: 30px;
+    background-size: 20.8px;
+    content: ' ';
+    background-repeat: no-repeat;
+    background-position: 5px  center;
+    padding-left: 30px;
+    margin-left: 10px;
+    border: 1px solid lightgray;
+	
+	}
+	
+.toolbaropts .datedialog p{
+	line-height:30px;
+    background: url(../img/dark_drop_arrow_ol2.png);
+	background-repeat: no-repeat;
+    background-position: right  center;
+	padding-right:25px;
+	margin-right:25px;
+	margin-right:15px;
+	
+}
+
+.toolbaropts .sizedialog{
+		padding-left:50px;
+		float:left;
+    height: 30px;
+    top: -5px;
+    position: relative;
+    height: 30px;
+    background-size: 20.8px;
+    content: ' ';
+    background: url(../img/size_icon.svg);
+
+    background-repeat: no-repeat;
+    background-position: 5px  center;
+    padding-left: 35px;
+    margin-left: 10px;
+    border: 1px solid lightgray;
+	
+	}
+	
+.toolbaropts .sizedialog p{
+	line-height:30px;
+    background: url(../img/dark_drop_arrow_ol2.png);
+	background-repeat: no-repeat;
+    background-position: right  center;
+	padding-right:25px;
+	margin-right:15px;
+	
+}
+	
+.toolbaropts .datedialog p span{
+
+	
+}
+div#rentalblock{
+	margin:auto;
+}	
+.dateform{
+#	width:46.5vw;
+#	height:45viw;
+	top:1vw;
+#	left:50%;
+	position:absolute;
+	padding: 0.5vw 0.5vw;
+	
+	
+}
+
+.dateform .datepicker{
+	display:block;
+	
+}
+.dateform .table td {
+   text-align: center;  
+    vertical-align:middle;
+    
+}
+.dateform .table td a {
+   text-align: center;  
+    vertical-align:middle;
+}
+
+.dateform button{
+	
+background-color:	#333333;
+color:white;
+margin:auto;
+
+}
+
+
+.datepicker-legend-item.at-door:before {
+    border: 0 solid #C09566;
+    border-width: 2px 13px 13px 2px;
+}
+
+
+datepicker-legend-item:before {
+    content: " ";
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.datepicker-legend-item.in-mail:before {
+    border: 0 solid #C09566;
+    border-width: 13px 2px 2px 13px;
+}
+table#tblrent tbody tr  td{
+	
+	border: 1px solid lightgrey;
+}
+table#tblrent{
+	table-layout: fixed;
+}
+.moblock .next{
+	float:right;
+	flex-basis: none;
+}
+
+.moblock .prev{
+	float:left;
+	flex-basis: none;
+
+}
+
+.moblock{
+display:flex;
+ justify-content: center;
+  align-items: center;	
+}
+ .centercon{
+
+	margin:auto;
+	text-align: center;
+	flex-basis: 1 200px;
+	
+	}
+
+table#tblrent{
+	
+	 border-collapse: collapse;
+    width: 100%;
+}
+table#tblrent   td{
+	cursor: pointer;	
+	position: relative;
+}	
+	
+	
+table#tblrent   td,th{
+	
+#	width:14.28%;
+	overflow: hidden;
+	
+}
+table#tblrent td a{
+	    /*line-height:2.5vw;*/
+	    line-height: 35px;
+	
+}
+table#tblrent th{
+
+	/*height: 2.5vw;
+    width: 3.5vw;*/
+    height: 40px;
+    width: 53px;    
+    display: inline-block;
+
+	
+}
+table#tblrent td{
+
+	/*height: 3.5vw;
+    width: 3.5vw;*/
+    height: 53px;
+    width: 53px;    
+    display: inline-block;
+
+	
+}
+#tblrent  tbody  tr td:first-child, #tblrent tbody  tr td:first-child a{
+background-color: #fff;
+color:#333333;
+	
+	cursor: crosshair;
+	
+}
+
+#tblrent  tbody  tr td.block,#tblrent tbody tr td.block a{
+
+	
+}
+
+
+
+#tblrent  tbody  tr td.blocked,#tblrent  tbody  tr td.blocked a{
+cursor: crosshair;
+background-color: #E5E5E5;
+color:#333333;
+	
+}	
+	
+table#tblrent  tbody  tr td.blockstart::before{
+    content: " ";
+    box-sizing: border-box;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+	
+	
+}
+table#tblrent  tbody  tr td.blockend::before{
+    content: " ";
+    box-sizing: border-box;
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    
+	
+}
+
+
+
+
+
+
+
+.sizeform{
+	width:350px;
+	height:350px;
+	top:20%;
+	left:30%;
+	position:absolute;
+	padding:10px 10px;
+	font-size: 12px;
+	
+}
+
+#divszdialog div.szcontainer{
+	
+	display:table;
+	
+}
+div#divdtdialog .block{
+	padding:0;
+	margin:0 ;
+}
+#divszdialog div.szcontainer div.szrow{
+	
+	display:table-row;
+}
+
+#divszdialog div.szcontainer div.szrow div.szcol{
+	
+	display:table-cell;
+	cursor: pointer;
+	min-width:25px;
+	line-height:25px;
+	
+}
+
+#tblrent  tbody  tr td.prevmod,#tblrent  tbody  tr td.prevmod a,#tblrent  tbody  tr td.nextmod,#tblrent  tbody  tr td.nextmod a {
+cursor: crosshair;
+background-color: #fff ;
+color:#fff;
+	
+}	
+
+#tblrent  tbody  tr td.block, #tblrent  tbody  tr td.block a{
+background-color: #C09566;
+color: white;
+}
+.szitem.selected{
+	
+	color:white;
+	background-color:black;
+}
+
+
+div#rnleg {
+	font-size:xx-small !important;
+	font-family: monospace;
+}
+div#rnleg ul{
+	list-style: none;
+	list-style-type: none;
+	
+}
+
+div#rnleg li span:first-child{
+	position:relative;
+	/*width:30px !important;*/
+	width: 20px;
+	display:block;
+	/*height:30px !important;*/
+	height: 20px;
+}
+div#rnleg li
+{
+	/*display:inline-flex;*/
+	display: inline;
+	
+}
+div#rnleg li span:last-child{
+	position:relative;
+	padding-top:2px;
+	padding-left:1px;
+	display:block;
+	/*height:30px !important;*/
+	height: 20px;
+} 
+ 
+
+div#rnleg  div{
+	display:inline-block;
+}
+
+div#rnleg  span.block {
+background-color: #C09566;
+color: white;
+}
+#div#rnleg li span.av{
+	border: 1px solid grey !important;
+	background-color:white;
+}
+
+div#rnleg li span.blocked {
+
+background-color: #E5E5E5;
+color:#333333;
+	
+}	
+
+div#rnleg li  span.blockstart:before{
+    content: " ";
+    box-sizing: border-box;
+    position: absolute;
+    /*left: 2px;
+    top: 2px;
+    width: 10px;
+    height: 10px;*/
+    left: 1px;
+    top: 1px;
+    width: 8px;
+    height: 8px;    
+    background-color: white;
+	
+	
+}
+
+div#rnleg li span.blockend:before{
+    content: " ";
+    
+    box-sizing: border-box;
+    position: absolute;
+/*    right: 2px;
+    bottom: 2px;
+    width: 10px;
+    height: 10px;*/
+    right: 1px;
+    bottom: 1px;
+    width: 8px;
+    height: 8px;    
+    background-color: white;
+    
+	
+}
+#rnleg ul{
+	display:flex;
+}
+#rnleg ul li{
+	max-width:35%;
+}
+

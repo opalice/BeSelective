@@ -1,0 +1,133 @@
+Faq,Faq
+"Add New Faq","Add New Faq"
+"Save FAQ","Save FAQ"
+"Save and Continue Edit","Save and Continue Edit"
+"Delete FAQ","Delete FAQ"
+"Edit FAQ '%1'","Edit FAQ '%1'"
+"New FAQ","New FAQ"
+Answer,Answer
+"Author Information","Author Information"
+Name,Name
+Email,Email
+Author,Author
+"Image Thumbnail","Image Thumbnail"
+Image,Image
+"General Information","General Information"
+Question,Question
+Status,Status
+Pending,Pending
+Enable,Enable
+Disable,Disable
+"Store Views","Store Views"
+"Tag Name","Tag Name"
+Comma-separated.,Comma-separated.
+"Most FAQ","Most FAQ"
+Yes,Yes
+No,No
+"Sidebar Question","Sidebar Question"
+"Sort Order","Sort Order"
+"Created Date","Created Date"
+General,General
+"Product ID","Product ID"
+Type,Type
+Sku,Sku
+Price,Price
+"FAQ Information","FAQ Information"
+ID,ID
+Title,Title
+"Published On","Published On"
+Created,Created
+Edit,Edit
+"Save FAQ Category","Save FAQ Category"
+"Delete FAQ Category","Delete FAQ Category"
+"Edit FAQ Category '%1'","Edit FAQ Category '%1'"
+"New FAQ Category","New FAQ Category"
+"Category Title Option","Category Title Option"
+"Category Font Size","Category Font Size"
+"Unit: px","Unit: px"
+"Category Title Color","Category Title Color"
+"Question Options","Question Options"
+"Font Size","Font Size"
+"Text Color","Text Color"
+"Background Color","Background Color"
+"Border Color","Border Color"
+"Border Width","Border Width"
+"Question Active Option","Question Active Option"
+"Text Color(Active)","Text Color(Active)"
+"Background Color(Active)","Background Color(Active)"
+Design,Design
+"FAQ ID","FAQ ID"
+"Category Name","Category Name"
+"Category Icon","Category Icon"
+"For ex: fa-plus-square-o. Find more class at <a target=""_blank"" href=""http://fontawesome.io/icons/"">here</a>","For ex: fa-plus-square-o. Find more class at <a target=""_blank"" href=""http://fontawesome.io/icons/"">here</a>"
+Description,Description
+"FAQ Category Information","FAQ Category Information"
+"Back to My Orders","Back to My Orders"
+"View Another Order","View Another Order"
+"The data has been deleted.","The data has been deleted."
+"We can't find a data to delete.","We can't find a data to delete."
+"FAQ Category","FAQ Category"
+"FAQ Category Infomation","FAQ Category Infomation"
+"This staff no longer exists.","This staff no longer exists."
+"Edit Grid","Edit Grid"
+"New Grid","New Grid"
+"The Data has been saved.","The Data has been saved."
+"Something went wrong while saving the data.","Something went wrong while saving the data."
+"A total of %1 element(s) have been deleted.","A total of %1 element(s) have been deleted."
+"A total of %1 record(s) have been updated.","A total of %1 record(s) have been updated."
+"Something went wrong while updating the product(s) status.","Something went wrong while updating the product(s) status."
+FAQ,FAQ
+"Manage FAQ","Manage FAQ"
+"This faq no longer exists.","This faq no longer exists."
+"Edit FAQ","Edit FAQ"
+"New FAQ ","New FAQ "
+"FAQ ","FAQ "
+"Something went wrong while send the data.","Something went wrong while send the data."
+"Your question has sent successfully, we will answer this question as soon as possible","Your question has sent successfully, we will answer this question as soon as possible"
+"Uploaded image is not valid.","Uploaded image is not valid."
+"Incorrect CAPTCHA","Incorrect CAPTCHA"
+name,name
+description,description
+answer,answer
+"Created by author_name","Created by author_name"
+"'on ' .","'on ' ."
+"Ask Us Question","Ask Us Question"
+Name:,Name:
+Email:,Email:
+Question:,Question:
+Search,Search
+"No Most FAQ Result","No Most FAQ Result"
+"FAQ's Related","FAQ's Related"
+"Vous avez d'autres questions?","Vous avez d'autres questions?"
+"Voir toutes les FAQS","Voir toutes les FAQS"
+"No FAQ Founded","No FAQ Founded"
+"Search FAQ for: ""' . . '""","Search FAQ for: ""' . . '"""
+". ' FAQ(s) Founded'",". ' FAQ(s) Founded'"
+"'Tag:  ' .","'Tag:  ' ."
+Category,Category
+Tags,Tags
+". '/tag/' .",". '/tag/' ."
+"NetBase Team","NetBase Team"
+"General Settings","General Settings"
+"Enable FAQ On Frontend","Enable FAQ On Frontend"
+"Show FAQ in Category Page","Show FAQ in Category Page"
+"Show Related FAQ in Product View Page","Show Related FAQ in Product View Page"
+"FAQ Page Settings","FAQ Page Settings"
+"Show FAQ in Sidebar","Show FAQ in Sidebar"
+"Maximum Number FAQ in Sidebar","Maximum Number FAQ in Sidebar"
+"Enable Listing FAQ By Tag Name","Enable Listing FAQ By Tag Name"
+"Maximum Number Of Tag Listing","Maximum Number Of Tag Listing"
+"Show Most FAQ Listing in FAQ Page","Show Most FAQ Listing in FAQ Page"
+"Maximum Number Of Most FAQ","Maximum Number Of Most FAQ"
+"Show FAQ Author","Show FAQ Author"
+"Show FAQ Created Date","Show FAQ Created Date"
+"Setting Related FAQ in Product Page","Setting Related FAQ in Product Page"
+"Maximum Number Of Related FAQ","Maximum Number Of Related FAQ"
+"Enable validate Captcha in Contact Form","Enable validate Captcha in Contact Form"
+"Add New FAQ Category","Add New FAQ Category"
+Delete,Delete
+"Are you sure you wan't to delete selected FAQ Categories ?","Are you sure you wan't to delete selected FAQ Categories ?"
+"Change status","Change status"
+"Add New FAQ","Add New FAQ"
+"Are you sure you wan't to delete selected FAQ's ?","Are you sure you wan't to delete selected FAQ's ?"
+"Most Frequently","Most Frequently"

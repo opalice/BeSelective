@@ -1,0 +1,49 @@
+    <div class="modal-body" id="modalfrm">
+    <input type="hidden" name="act" value="O">
+        <div class="bootbox-body">
+<div style="display: flex;flex-direction: row">
+			<div style="flex-grow: 1">
+			
+			<h3>Payment Info</h3>
+			<ul>
+			<li><input type="radio" name="paction" value="">
+			<li><input type="radio" name="paction"  value="n" >No action</li>			
+			<li><input type="radio" name="paction"  value="p" data-role="delivery_return" data-fault="1">Partial forfeit<input name="part" /></li>			
+			<li><input type="radio" name="paction"  value="v"  data-fault="1">Void remaining</li>
+			<li><input type="radio" name="paction"  value="t" data-role="delivery_return" data-fault="1">Deposit Forfeit</li>
+			</ul>
+			</div>
+			<div>
+			<h3>Order Status</h3>
+			<ul>
+			<li><input type="radio" name="raction" value="">
+			<li><input type="radio" name="raction"  value="r" data-role="delivery_return">Received</li>
+			<li><input type="radio" name="raction"  value="s" data-role="processing">Shipped</li>			
+
+			</ul>
+			</div>
+	</div>
+			<p>
+			<u><strong>Customer Note:</strong></u><br>
+            <textarea class="bootbox-input bootbox-input-text form-control" name="message" rows="4" cols="83"></textarea>
+            </p>
+            <p>
+			<u><strong>Order Note:</strong></u><br>
+            <textarea class="bootbox-input bootbox-input-text form-control " name="note" rows="4" cols="83"></textarea>
+</p>
+	<p style="font-size: xx-small;">
+	If closed before any payment action. amount will be charged and  deposit refunded. if shipped amount will be charged(authorized=>capture). 
+	
+	</p>
+
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <span class="error"></span>
+        <button type="reset" class="btn btn-default"><span><%- cancellabel %></span></button>
+        <button type="submit"  data-id="<%- order %>"   class="btn btn-primary btnmultiv"><span><%- submitlabel %></span></button>
+            <input type="hidden" name="id" value="<%- id %>">         
+
+        <span class="clear"></span>
+    </div>

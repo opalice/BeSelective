@@ -1,0 +1,9 @@
+<?php
+$_item = $block->getItem();
+$product = $_item->getProduct(); // Get cart product details
+$a = $block->getAdditionalData(); // Get cart product additionl details defined in block page
+ ?>
+
+<div style="display: flex" class="multiv_cartitem">
+<strong><i><small><?php echo $a?></small></i></strong>    
+</div>

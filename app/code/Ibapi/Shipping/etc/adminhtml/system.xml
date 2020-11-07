@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <!--[Add carrrier to global system "carriers" group]-->
+        <section id="carriers">
+            <!--[Create group of carrier's fields with identifier]-->
+            <group id="multivship" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                <!--[Carrier's label on backend]-->
+                <label>Custom Ship</label>
+                <!--[Carrier's activate field with yes/no source model for dropdown]-->
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enabled for Checkout</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <!--[Carrier's title field for storefront]-->
+                <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <!--[Carrier's show method if unavailable with error message activate field]-->
+                <field id="price" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Rate(std)</label>
+                </field>
+				<field id="vipprice" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Rate(Exp)</label>
+                </field>
+				<field id="free" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Free std limit</label>
+                </field>
+				<field id="zip" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Express postal codes by 1111,2222</label>
+                </field>
+                <field id="vip_title" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Title for vip</label>
+                </field>
+                <field id="normal_title" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Title Normal</label>
+                </field>
+
+				<field id="pick_title" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Pickup Title</label>
+                </field>
+
+                <!--[Carrier's sort order]-->
+                <field id="sort_order" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Sort Order</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

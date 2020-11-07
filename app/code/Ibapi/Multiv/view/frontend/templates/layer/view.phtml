@@ -1,0 +1,372 @@
+<?php
+use Ibapi\Multiv\Model\Attribute\Source\Length;
+
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Category layered navigation
+ *
+ * @var $block \Ibapi\Multiv\Block\Navigation
+ */
+$ccnt=0;
+
+
+
+$filters=$block->getFilters();
+foreach($filters as $filter){
+    if(strtolower($filter->getName())==strtolower(__('Category'))){
+        $catfilter=$filter;
+        break;
+    }
+}
+
+$catfilter->getItemsCount();
+$r=$catfilter->getRemoveUrl();
+$items=$catfilter->getItems();
+$cnts=[];
+$lnts=[];
+foreach($items as $item){
+    $cnts[$item->getValueString()]=$item->getCount();
+    $ccnt+=$item->getCount();
+    if($item->getCount()){
+        $cc=$block->getCategory($item->getValueString());
+        if($cc)
+        $lnts[$item->getValueString()]=$cc->getUrl();
+    }
+    
+}
+?>
+
+<?php if ($block->canShowBlock()): ?>
+    <div class="block filter" id="multiv_block_filter">
+        <div class="block-title filter-title">
+            <strong><?= /* @escapeNotVerified */ __('Shop By') ?></strong>
+        </div>
+
+        <div class="block-content filter-content">
+
+<ol class="items">
+		<li class="item">	
+			<div class="subcat44">
+<?php 
+$cat= $block->getLayer()->getCurrentCategory();
+$parent=$cat->getParentCategory()->getUrl();
+$childs=$cat->getChildrenCategories();
+
+
+?>
+			<p class="subcat45"><a href="<?php echo $block->createCatUrl( $cat->getParentCategory()->getUrl())?>"><?php echo $cat->getName()?>&nbsp;</a></p>
+			<ul>
+			<?php foreach($childs as $cat):?>
+			<li class="subcat46">&nbsp;&nbsp;
+			<a href="<?php echo $block->createCatUrl($cat->getId())  ?>" >
+			<?php echo $cat->getName()?></li>
+			</a>
+			
+			<?php endforeach;?>
+			</ul>
+			</div>
+			
+</li>
+<?php $block->makeRent()?>
+<li class="item">
+    <div class="accordion_head"><h4><?php echo __('Price Range') ?><i class="glyphicon glyphicon-minus"></i></h4></div>
+
+<div class="accordion_body" style="display: none;">
+<p>
+    <!-- <label for="amount">Price range:</label> -->
+    <input type="text" id="amount" readonly>
+    <div id="price-slider"></div>
+</p>
+</div>
+<?php 
+?> 
+</li>
+
+
+<?php $colors=$block->getFilterOptions('color');$i=0;?>
+<?php if (count($colors)):?>
+<li class="item">
+
+<div class="accordion_head"><h4><?php echo __('Colors') ?><i class="glyphicon glyphicon-minus"></i></h4></div>
+<div class="accordion_body" style="display: none;">
+<p>
+<ul data-name="color" data-f="1">
+<?php $colors=$block->getFilterOptions('color');$i=0;?>
+<?php  foreach($colors as $k=>$c): ?>
+<?php if($colors[$k]['cnt']):?>
+
+<li><input class="filtersel" disabled="disabled" data-type="color" type="checkbox" <?php if($colors[$k]['sel']) echo "checked='checked' "  ?> data-val="<?php echo $colors[$k]['value']?>" ><?php echo $colors[$k]['label']?></li>
+<?php endif;?>
+<?php endforeach; ?>
+</ul>
+</p>
+</div>
+
+</li>
+<?php endif;?>
+
+<?php $colors=$block->getFilterOptions('brand');$i=0;?>
+<?php if(count($colors)):?>
+<li class="item">
+<div class="accordion_head"><h4><?php echo __('Brands') ?><i class="glyphicon glyphicon-minus"></i></h4></div>
+<div class="accordion_body" style="display: none;">
+<p>
+<ul data-name="brand" data-f="1">
+<?php 
+
+?>
+<?php  foreach($colors as $k=>$c): ?>
+<?php if($colors[$k]['cnt']):?>
+<li><input class="filtersel" disabled="disabled" data-type="brand" type="checkbox" <?php if($colors[$k]['sel']) echo "checked='checked' "  ?> data-val="<?php echo $colors[$k]['value']?>" ><?php echo $colors[$k]['label']?></li>
+<?php endif;?>
+<?php endforeach; ?>
+
+</ul>
+</p>
+</div>
+</li>
+<?php endif;?>
+
+
+<?php if($block->canShowSize()):?>
+
+<?php $colors=$block->getFilterOptions('length');$i=0;?>
+
+<?php if(count($colors)):?>
+
+<li class="item">
+<div class="accordion_head"><h4><?php echo __('Length') ?><i class="glyphicon glyphicon-minus"></i></h4></div>
+<div class="accordion_body" style="display: none;">
+<p>
+<ul data-name="length" data-f="1">
+<?php $colors=$block->getFilterOptions('length');$i=0;?>
+<?php  foreach($colors as $k=>$c): ?>
+<?php if($colors[$k]['cnt']):?>
+<li><input class="filtersel" disabled="disabled" type="checkbox"  data-type="length" <?php if($colors[$k]['sel']) echo "checked='checked' "  ?> data-val="<?php echo $colors[$k]['value']?>" ><?php echo $colors[$k]['label']?></li>
+<?php endif;?>
+<?php endforeach; ?>
+</ul>
+</p>
+</div>
+
+</li>
+<?php endif;?>
+<?php endif;?>
+
+
+
+<?php if($block->canShowSize()):?>
+<li class="item">
+<div class="accordion_head"><h4><?php echo __('Size') ?><i class="glyphicon glyphicon-minus"></i></h4></div>
+<div class="accordion_body" style="display: none;">
+<p>
+<table>
+<tbody>
+<?php 
+
+?>
+<?php $sizes=$block->getFilterOptions('size');$j=0;$i=0;$ii=0;?>
+
+<?php for ($i=0;$i<3;$i++) :?>
+<tr>
+<?php for ($j=0;$j<3&&$ii<count($sizes) ;$j++) :?>
+<td><a class="filtersel" disabled="disabled"   data-sel="<?php echo $sizes[$ii]['sel']?>" href='#' data-type="size" data-val="<?php echo $sizes[$ii]['value']?>"><?php echo $sizes[$ii++]['label']?></a></td>
+
+<?php if($ii>=count($sizes)) break;?>
+
+<?php endfor;?>
+</tr>
+<?php if($ii>=count($sizes)) break;?>
+<?php endfor;?>
+
+</tbody>
+
+</table>
+</p>
+</div>
+
+</li>
+<?php endif;?>
+
+
+
+</ol>
+       </div>
+       
+       
+ <script>
+require([
+    'jquery',
+    'Magento_Catalog/js/price-utils',
+    
+    "jquery/ui",
+    'domReady!'
+    
+], function($,pU){
+//     `use strict`;
+$('ul[data-f]').each(function(){
+		console.log('datam',$(this).find('li').length);
+		if($(this).find('li').length==0){
+			
+			$(this).parents('li.item').hide();
+		}
+});
+
+
+function addParams2(params){
+    	
+    	var queryParameters = {}, queryString = location.search.substring(1),
+        re = /([^&=]+)=([^&]*)/g, m;
+
+    // Creates a map with the query string parameters
+    while (m = re.exec(queryString)) {
+    	if(((m[1]=='rent4'||m[1]=='rent8')&&m[1]!=$.pricetype)||!m[1]||!m[2]||m[1]=='undefined'||m[2]=='undefined'){
+    		continue;
+    	}
+        queryParameters[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+    }
+    // Add new parameters or update existing ones
+    $.each(params,function(i,v){
+    	console.log('set ',i,v);
+    	queryParameters[v.name] = v.value;
+    	
+    });
+console.log($.param(queryParameters));
+    location.search = $.param(queryParameters); // Causes page to reload
+
+    }
+
+
+
+	$('.filtersel').attr('disabled',false);
+
+var price_url='<?php echo $block->getPriceUrl()?>';
+	var urls=<?php echo $this->getAttUrls()?>;
+	var vals=<?php echo $this->getAttVals()?>;
+	var filtervals=[];	
+	$('a.filtersel[data-sel="YES"]').each(function(){
+$(this).addClass('filterselected');
+filtervals.push($(this).data('val'));
+$('#divszdialog').find('[data-s="'+$(this).data('val')+'"]').addClass('filterselected');
+	});
+///console.log('filtervals',filtervals);
+	
+    $ ('body').on( 'click' ,'.filtersel',function(e){
+e.preventDefault();
+    	$('.filtersel').attr('disabled',true);
+    console.log('data',$(this).data());
+
+    var type=$(this).data('type');
+   	var v=$(this).data('val');
+   	
+   	var val=vals[type];
+	console.log('currentval',val,'n',v);
+	val=val==''?[]:val.split(',').map(function(x){ return (x+'').trim();});
+			
+   	console.log('val',val);
+   	
+   	///var url=urls[type]
+	var iv=val.indexOf((v+'').trim())
+	console.log('val',val,'iv',iv);
+   	
+	if (iv>=0){
+		val.splice(iv,1);
+		
+		}
+	else{
+		console.log('adding ',v);
+		val.push(v);
+	}
+	v=val.join(',');
+	console.log('sending',v);
+	addParams2([{name:type, value:v}]);
+   ///	url=url.replace('YYYYY',encodeURIComponent(v));
+   	///console.log('type',type,url,v,iv);
+   ///location.href=url;	
+    
+///	e.preventDefault();
+	
+//	return false;
+    	
+        });
+    function getPrice(x){
+        	x=parseFloat(x);
+        	if(isNaN(x)) x=0;
+			return '<?php echo $this->getCurrencySymbol()?>'+pU.formatPrice(x);
+        }
+    
+    $("div#price-slider").slider({
+			range: true,
+			min: 10,
+			max: 500,
+			values: <?php echo $this->getPriceSelect()?>,
+			slide: function( event, ui ) {
+				$( "#amount" ).val(pU.formatPrice( ui.values[ 0 ]) + " - " + pU.formatPrice(ui.values[ 1 ]) );
+			},
+			change: function( event, ui ) {
+
+				addParams2([{name:$.pricetype,value:ui.values[0]+','+ui.values[1]}]);
+				
+//				console.log('vals',ui.values[0]+"~"+ui.values[1]);
+///				window.location.href = price_url.replace('XXXXX',ui.values[0]).replace('ZZZZZ',ui.values[1]);
+			}
+		});
+		$( "#amount" ).val( getPrice($( "#price-slider" ).slider( "values", 0 ))+" - " +getPrice($( "#price-slider" ).slider( "values", 1 )));
+});
+require(['jquery'],function($){
+    $(document).ready(function(){
+        //toggle the component with class accordion_body
+
+        $(".accordion_head").click(function(){
+            if( $(this).next(".accordion_body").is(':visible')){
+                $(this).next(".accordion_body").slideUp(300);
+                $(this).find('.glyphicon').toggleClass('glyphicon-plus glyphicon-minus')
+            }else {
+                $(this).next(".accordion_body").slideDown(300); 
+                $(this).find('.glyphicon').toggleClass('glyphicon-minus glyphicon-plus')
+            }
+        });
+
+        if ($(window).width() > 960) {
+            $('.glyphicon').each(function() {
+                $(this).toggleClass('glyphicon-minus glyphicon-plus');
+            });
+            $('.accordion_head').each(function() {
+                $(this).next(".accordion_body").slideDown(300);
+            })
+        }
+
+        $(window).resize(function() {
+            if ($(window).width() < 960) {
+               $('.glyphicon').each(function() {
+                    $(this).toggleClass('glyphicon-plus glyphicon-minus');
+                });
+                $('.accordion_head').each(function() {
+                    $(this).next(".accordion_body").slideUp(300);
+                })                
+            } else if ($(window).width() > 960) {
+                $('.glyphicon').each(function() {
+                    $(this).toggleClass('glyphicon-minus glyphicon-plus');
+                });
+                $('.accordion_head').each(function() {
+                    $(this).next(".accordion_body").slideDown(300);
+                })
+            }   
+        });         
+    });
+});
+</script>
+       
+       
+       
+       
+    </div>
+<?php endif; ?>

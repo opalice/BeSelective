@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+<referenceBlock name="content"><block template="productlist.phtml" class="Ibapi\Multiv\Block\Grid\Products" name="multiv_block_productgrid" cacheable="false"/></referenceBlock>
+    </body>
+
+<!-- 
+<referenceContainer name="content">
+            <block class="Ibapi\Multiv\Block\Products" name="multiv.productlist" cacheable="false">
+                <block class="Ibapi\Multiv\Block\Products\Container"
+                       name="multiv.products.extra.container" as="myproducts.extra.container">
+                    <block class="Magento\Framework\View\Element\Template"
+                        name="multiv.products.extra.container.data" as="myproducts.extra.container.data"/>
+                </block>
+            </block>
+            <block class="Magento\Customer\Block\Account\Dashboard" name="customer.account.link.back" template="Magento_Customer::account/link/back.phtml" cacheable="false"/>
+        </referenceContainer>
+<customer_account>
+    <reference name="customer_account_navigation">
+        <action method="addLink" translate="label" module="review"><name>reviews</name><path>review/customer</path><label>My Product Reviews</label></action>
+    </reference>
+</customer_account>
+-->
+</page>

@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <type name="Magento\Catalog\Helper\Product\ConfigurationPool">
+        <arguments>
+            <argument name="instancesByType" xsi:type="array">
+                <item name="rantalhelper" xsi:type="object">Ibapi\Multiv\Helper\Catalog\Product\Configuration</item>
+            </argument>
+        </arguments>
+    </type>
+
+	<preference for ="Magento\Catalog\Model\Layer\FilterList"  type="Ibapi\Multiv\Model\Layer\Filter\FilterList"></preference>
+    <preference for="Magento\Catalog\Block\Product\ProductList\Toolbar" type="Ibapi\Multiv\Block\Toolbar"/>
+    <!-- 
+    <preference for="Magento\Review\CustomerData\Review" type="Ibapi\Multiv\Model\CustomerData\Review"></preference>
+    -->
+    <preference for="Magento\LayeredNavigation\Block\Navigation" type="Ibapi\Multiv\Block\Navigation" />
+    <preference for="Magento\Catalog\Model\Layer\AvailabilityFlagInterface" type="Ibapi\Multiv\Model\Layer\Category\AvailabilityFlag" />
+	<preference for ="Magento\Review\Block\Form" type="\Ibapi\Multiv\Block\Product\ReviewForm"></preference>
+	<preference for ="Magento\Review\Block\Product\View\ListView" type="\Ibapi\Multiv\Block\Product\ReviewList"></preference>
+	<preference for="Magento\Catalog\Block\Product\ListProduct" type="Ibapi\Multiv\Block\Product\ListProduct"></preference>
+    <preference  for="Magento\Bundle\Block\Checkout\Cart\Item\Renderer" type="Ibapi\Multiv\Block\Checkout\Cart\Item\Renderer"></preference>
+<!-- 
+   <preference for="Magento\Catalog\Model\Layer" type="Ibapi\Multiv\Model\Layer" />
+    -->
+    
+
+      <type name="Magento\Checkout\Model\Cart">
+        <plugin name="CartChecker" type="\Ibapi\Multiv\Plugin\Cart\Around" />
+    </type>
+    
+        <type name="Magento\Catalog\Model\ResourceModel\Product\Collection">
+    <!--    <plugin name="add_stock_information" type="Magento\CatalogInventory\Model\AddStockStatusToCollection" />
+ -->    <plugin name="add_stock_information" disabled="true"/>
+
+    </type>
+    
+    
+    <type name="Magento\Checkout\CustomerData\AbstractItem">
+
+     <plugin name="minicart_bundle_img" type="Ibapi\Multiv\Model\CustomerData\AroundItem" sortOrder="1"/>
+
+</type>
+    
+        <type name="Magento\Customer\CustomerData\SectionPoolInterface">
+    <arguments>
+        <argument name="sectionSourceMap" xsi:type="array">
+                    <item name="cart" xsi:type="string">Ibapi\Multiv\Model\CustomerData\Cart</item>
+    
+            <item name="carttimer" xsi:type="string">Ibapi\Multiv\Model\CustomerData\Section</item>
+        </argument>
+    </arguments>
+</type>
+    
+    
+        <virtualType name="categoryFilterList" type="Ibapi\Multiv\Model\Layer\Filter\FilterList">
+        <arguments>
+            <argument name="filters" xsi:type="array">
+                <item name="category" xsi:type="string">Ibapi\Multiv\Model\Layer\Filter\Date</item>
+              <!--   <item name="static" xsi:type="string">Ibapi\Multiv\Model\Layer\Filter\Attribute</item> -->
+            </argument>
+        </arguments>
+    </virtualType>
+    
+    
+    
+    <!-- 
+        <type name="Aheadworks\Layerednav\Model\Layer\FilterListCategory">
+        <arguments>
+            <argument name="filterableAttributes" xsi:type="object">Magento\Catalog\Model\Layer\Category\FilterableAttributeList</argument>
+        </arguments>
+    </type>
+    <type name="Aheadworks\Layerednav\Model\Layer\FilterListSearch">
+        <arguments>
+            <argument name="filterableAttributes" xsi:type="object">Magento\Catalog\Model\Layer\Search\FilterableAttributeList</argument>
+        </arguments>
+    </type>
+    
+    
+    <type name="Aheadworks\Layerednav\Model\Layer\FilterListResolver">
+        <arguments>
+            <argument name="filterListPool" xsi:type="array">
+                <item name="category" xsi:type="string">Aheadworks\Layerednav\Model\Layer\FilterListCategory</item>
+                <item name="catalog_search" xsi:type="string">Aheadworks\Layerednav\Model\Layer\FilterListSearch</item>
+                <item name="aw_advanced_search" xsi:type="string">Aheadworks\Layerednav\Model\Layer\FilterListSearch</item>
+            </argument>
+        </arguments>
+    </type>
+    -->
+    
+     <virtualType name="searchFilterList" type="Ibapi\Multiv\Model\Layer\Filter\FilterList">
+    
+        <arguments>
+            <argument name="filters" xsi:type="array">
+                <item name="category" xsi:type="string">Ibapi\Multiv\Model\Layer\Filter\Date</item>
+	<!--                 <item name="static" xsi:type="string">Ibapi\Multiv\Model\Layer\Filter\Static</item>
+-->
+
+            </argument>
+        </arguments>
+    </virtualType>
+
+        <virtualType name="Magento\LayeredNavigation\Block\Navigation\Category" type="Ibapi\Multiv\Block\Navigation">
+        <arguments>
+            <argument name="filterList" xsi:type="object">categoryFilterList</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Magento\LayeredNavigation\Block\Navigation\Search" type="Ibapi\Multiv\Block\Navigation">
+        <arguments>
+            <argument name="filterList" xsi:type="object">searchFilterList</argument>
+        </arguments>
+    </virtualType>
+
+<!-- 
+
+<type name="Magento\Checkout\Model\CompositeConfigProvider">
+        <arguments>
+            <argument name="configProviders" xsi:type="array">
+                <item name="checkout_vip" xsi:type="object">Ibapi\Multiv\Model\VipConfigProvider</item>
+            </argument>
+        </arguments>
+    </type>
+    -->
+    
+ <!--      <type name="Magento\Catalog\Model\Layer">
+        <plugin name="addAttributesOnPrepareFrontCollection" type="Ibapi\Multiv\Model\Layer\Plugin"/>
+    </type>
+ 
+    
+    <type name="Magento\Review\Model\Review">
+        <plugin name="afteraggr" type="Ibapi\Multiv\Plugin\UpdateReview" />
+    </type>
+    
+-->
+</config>
+

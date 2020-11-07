@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Sales:etc/pdf_file.xsd">
+    <totals>
+        <total name="vipdiscount">
+            <title translate="true">Vip Discount</title>
+            <source_field>vipdiscount</source_field>
+            <font_size>7</font_size>
+            <display_zero>false</display_zero>
+            <sort_order>401</sort_order>
+        </total>
+
+        <total name="discount">
+            <title translate="true">Discount</title>
+            <source_field>discount_amount</source_field>
+            <title_source_field>discount_description</title_source_field>
+            <font_size>7</font_size>
+            <display_zero>false</display_zero>
+            <sort_order>402</sort_order>
+        </total>
+         <total name="subtotal2">
+            <title translate="true">Subtotal</title>
+            <source_field>subtotal</source_field>
+            <title_source_field>discount_description</title_source_field>
+            <font_size>7</font_size>
+            <display_zero>true</display_zero>
+            <model>Ibapi\Multiv\Model\Total\Pdfstotal</model>
+            <sort_order>403</sort_order>
+        </total>
+        <total name="tiscount">
+        <title translate="true">Taxes</title>
+        <source_field>tiscount</source_field>
+        <model>Ibapi\Multiv\Model\Total\Pdftiscount</model>
+        <font_size>7</font_size>
+        <display_zero>true</display_zero>
+        <sort_order>404</sort_order>
+        </total>
+
+
+        <total name="extax">
+        <title translate="true">Taxes</title>
+        <source_field>tiscount</source_field>
+        <model>Ibapi\Multiv\Model\Total\Pdfextax</model>
+        <font_size>7</font_size>
+        <display_zero>true</display_zero>
+        <sort_order>697</sort_order>
+        </total>
+        <total name="subtotal3">
+        <title translate="true">Taxes</title>
+        <source_field>subtotal</source_field>
+        <model>Ibapi\Multiv\Model\Total\Pdfstotal</model>
+        <font_size>7</font_size>
+        <display_zero>true</display_zero>
+        <sort_order>698</sort_order>
+        </total>
+
+        <total name="viscount">
+            <title translate="true">Money Box</title>
+            <source_field>viscount</source_field>
+
+            <display_zero>false</display_zero>
+            <sort_order>699</sort_order>
+        </total>
+
+
+    </totals>
+    <!--
+
+
+
+WHAT IS NEEDED:
+
+Please place everything on the correct ordering like this:
+
+1 - SUBTOTAL 50€
+2 - Shipping 15€
+3 - if (VIP CODE) -8€
+4 - if (Promo Code) -10€ is not show actually
+5 - SUB-Total 47€
+(white space)
+6 - VAT 8.16€ its the VAT of 47
+7 - EX Tax 38.84€ is not correct
+(white space)
+8 - SUB-Total 47€ show it a second time to be easy to understand
+9 - if MoneyBox -7€
+10 - Grand Total 40€
+-->
+</config>

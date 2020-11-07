@@ -1,0 +1,151 @@
+<div id="divszdialog"  style="display:none">
+<div class="szcontainer">
+
+<table>
+<tbody>
+
+<?php $sizes=$block->getSizes();$j=0;$i=0;$ii=0;?>
+<?php
+array_shift($sizes);
+?>
+<?php for ($i=0;$i<3;$i++) :?>
+<tr>
+<?php for ($j=0;$j<3&&$ii<count($sizes) ;$j++) :?>
+<td><a class="szcol szitem"  href='#' data-type="size" data-s="<?php echo $sizes[$ii]['value']?>"><?php echo $sizes[$ii++]['label']?></a></td>
+
+<?php if($ii>=count($sizes)) break;?>
+
+<?php endfor;?>
+</tr>
+<?php if($ii>=count($sizes)) break;?>
+<?php endfor;?>
+
+</tbody>
+
+</table>
+
+<div class="row">
+<button  class="btn btn-medium szcls"  data-s="." ><?php echo __('Clear') ?></button>
+
+<button  class="btn btn-medium szapply"><?php echo __('Apply') ?></button>
+</div>
+</div>
+
+<div id="divdtdialog"  style="display:none">
+
+	<div class="moblock">
+		<div  class="prev"> <a id="prevmo" class="cal_pn" href="#">&lt;</a></div>
+        <div class="centercon">
+    	<span id="calmo"></span>&nbsp;<span id="calyr"></span>
+    	</div>    
+        
+       	<div class="next" ><a id="nextmo" class="cal_pn" href="#">&gt;</a></div>
+    </div>
+
+<div id="rentalblock" class="datepicker table-responsive row">
+
+
+
+    <table class="cal table table-bordered" id="tblrent" width="100%">
+	       
+	  <thead>
+        <tr>
+          <th data-d="0"><?php echo __('Mon') ?></th>
+          <th data-d="1"><?php echo __('Tue') ?></th>
+          <th data-d="2"><?php echo __('Wed') ?></th>
+          <th data-d="3"><?php echo __('Thu') ?></th>
+          <th data-d="4"><?php echo __('Fri') ?></th>
+          <th data-d="5"><?php echo __('Sat') ?></th>
+          <th data-d="6"><?php echo __('Sun') ?></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td ><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-zz="1" class="dtthu"><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-z="1"><a href="#"></a></td>
+          <td data-z="1" class="blocked"><a href="#"></a></td>
+        </tr>
+        <tr>
+          <td><a href="#"></a></td>
+          <td><a  href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-zz="1" class="dtthu"><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-z="1"><a href="#"></a></td>
+          <td data-z="1" class="blocked"><a href="#"></a></td>
+        </tr>
+        <tr>
+          <td><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-zz="1" class="dtthu"><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-z="1"><a href="#"></a></td>
+          <td data-z="1" class="blocked"><a href="#"></a></td>
+        </tr>
+        <tr>
+          <td><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-zz="1" class="dtthu"><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-z="1"><a href="#"></a></td>
+          <td data-z="1" class="blocked"><a href="#"></a></td>
+        </tr>
+        <tr>
+          <td><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-zz="1" class="dtthu"><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-z="1"><a href="#"></a></td>
+          <td data-z="1" class="blocked"><a href="#"></a></td>
+        </tr>
+        <tr>
+          <td><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-zz="1" class="dtthu"><a href="#"></a></td>
+          <td><a href="#"></a></td>
+          <td data-z="1"><a href="#"></a></td>
+          <td data-z="1" class="blocked"><a href="#"></a></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+<div id="rnleg" >
+<ul>
+<li><span class="blocked"></span><span><?php echo __('Not available or blocked')?></span></li>
+<li><span class="av" style="background-color: white;border:1px solid grey">&nbsp;</span><span><?php echo __('Available for booking.')?></span></li>
+</ul>
+</div>
+
+
+</div>
+
+<div class="row">
+<h4 style="display:inline-block;"><?php echo __('Rental Period') ?></h4> 
+<span style="display:inline-block;">
+<input type="radio" id="rentp_4" name="p" value="4" class="rentp"><?php echo __('4 Days') ?> 
+</span>
+<span style="display:inline-block;">
+<input type="radio" id="rentp_8" name="p" value="8" class="rentp"><?php echo __('8 Days') ?> 
+</span>
+</div>
+<div class="row" id="btns" style="display: none;">
+<div class="centercon" style="display: block;">
+<button id="btncls" class="btn btn-medium"   id="btncls"><?php echo __('Close') ?></button>
+
+<button id="btnsrc" class="btn btn-medium"   id="btnsrc"><?php echo __('Apply') ?></button>
+</div>
+</div>
+
+</div>
+
+
+<script type="text/x-magento-init">{ "*": { "Ibapi_Multiv/js/multiv": <?= $block->getConfig(); ?> } }</script>

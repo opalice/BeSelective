@@ -1,0 +1,97 @@
+<script type="text/javascript">
+require([
+'jquery',
+'Magento_Customer/js/model/authentication-popup',
+
+///    'Magento_Catalog/js/model/authentication-popup',
+'Magento_Customer/js/customer-data',
+'mage/url',
+'Magento_Ui/js/modal/alert',
+'mage/translate',
+
+'mage/mage',
+
+
+
+
+
+], function ($,authenticationPopup, customer,mageurl,alert,$t) {
+'use strict';
+
+var cst = customer.get('customer');
+var mysub;
+if(cst().firstname){
+    console.log('hidden');
+$('.regq-login').hide();
+$('.regq-loggedin').show();
+}else{
+
+     mysub = cst.subscribe(function (updated) {
+console.log('custupdated',updated);
+    try {
+
+if (updated.firstname) {
+$('.regq-login').hide();
+$('.regq-loggedin').show();
+
+}
+} catch (e) {
+
+}
+
+});
+
+
+    $('.regq-login').show();
+    $('.regq-loggedin').hide();
+
+}
+
+
+$('body').on('click','.regq-login',function(e){
+console.log('clicked login');
+e.preventDefault();
+try {
+    mysub.dispose();
+
+}
+catch(e){
+
+}
+if (!cst().firstname) {
+
+
+authenticationPopup.showModal();
+
+ mysub = cst.subscribe(function (updated) {
+console.log('custupdated',updated);
+    try {
+
+if (updated.firstname) {
+mysub.dispose();
+
+$(authenticationPopup.modalWindow).modal('closeModal');
+location.reload()
+
+}
+} catch (e) {
+
+}
+
+});
+
+
+console.log('nocust');
+return false;
+}
+return false;
+
+
+});
+
+
+
+
+
+});
+</script>

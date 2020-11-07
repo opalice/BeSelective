@@ -1,0 +1,30 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="rentals" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Rentals</label>
+            <tab>general</tab>
+            <resource>Ibapi_Multiv::all</resource>
+            <group id="procat" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Products Cats</label>
+                <field id="subid" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Subscription Product ID</label>
+                </field>
+                <field id="acats" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Rental Cats</label>
+                </field>
+
+				<field id="comm" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Rental Commission percent</label>
+                </field>
+                <field id="ccats" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Cloths Cats(to show size)</label>
+                </field>
+                <field id="defs" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Default Size</label>
+                </field>
+
+
+            </group>
+        </section>
+    </system>
+</config>

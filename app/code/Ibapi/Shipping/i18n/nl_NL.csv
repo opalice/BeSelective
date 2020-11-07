@@ -1,0 +1,18 @@
+Standard,Standard
+Express,Express
+"Express delivery within %1","Express delivery within %1"
+"Standard delivery within %1","Standard delivery within %1"
+"Standard Method","Standard Method"
+"Field ","Field "
+" is required."," is required."
+"Custom Ship","Custom Ship"
+"Enabled for Checkout","Enabled for Checkout"
+Title,Title
+Rate(std),Rate(std)
+Rate(Exp),Rate(Exp)
+"Free std limit","Free std limit"
+"Express postal codes by 1111,2222","Express postal codes by 1111,2222"
+"Title for vip","Title for vip"
+"Title Normal","Title Normal"
+"Pickup Title","Pickup Title"
+"Sort Order","Sort Order"

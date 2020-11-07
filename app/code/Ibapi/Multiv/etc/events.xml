@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+<!-- 
+    <event name="sales_order_place_after">
+    </event>
+    -->
+    <!-- 
+        <event name="checkout_cart_product_add_after">
+        <observer name="multiv_cart_product_add_after" instance="Ibapi\Multiv\Observer\Checkoutafter" />
+    </event>
+    <event name="sales_model_service_quote_submit_before">
+        <observer name="multiv_service_quote_submit_before" instance="Ibapi\Multiv\Observer\Quotebefore" />
+    </event>
+sales_quote_collect_totals_after
+    <event name="checkout_cart_product_add_after">
+    
+    
+    </event>
+
+<event name="sales_model_service_quote_submit_before">
+<observer name="ibapi_multiv_torder_save" instance="Ibapi\Multiv\Model\Checkout\ToOrder"/>
+</event>
+    -->
+
+    <event name="catalog_product_is_salable_after">
+        <observer name="ibapi_multiv_cart_after" instance="Ibapi\Multiv\Model\Saleable"/>
+    
+    </event>
+
+
+     <event name="sales_order_place_before">
+        <observer name="ibapi_multiv_sales_befores" instance="Ibapi\Multiv\Model\Checkout\SaveOrder"/>
+    </event>
+
+
+
+    <event name="checkout_submit_all_after">
+        <observer name="multiv_sales_order_payment_place_end" instance="Ibapi\Multiv\Model\Checkout\ReportOrderPlaced"/>
+    </event>
+
+
+<!-- 
+   <event name="sales_order_place_after">
+        <observer name="ibapi_multiv_sales_after" instance="Ibapi\Multiv\Model\Checkout\ReportOrderPlaced"/>
+    </event>
+    -->
+    <event name="salesrule_validator_process">
+   <observer name="multiv_sales_rule" instance="Ibapi\Multiv\Model\Bundlerule" /> 
+    </event>
+        <event name="sales_order_invoice_pay">
+        <observer name="multiv_sales_order_invoice_pay" instance="Ibapi\Multiv\Model\Invoicepay" />
+    </event>
+         
+	<event name="sales_model_service_quote_submit_before">
+	    <observer name="multiv_submit_quote_submit_before" instance="Ibapi\Multiv\Model\SubmitOrder" />
+	</event>        
+
+	<event name="email_order_comment_set_template_vars_before">
+
+	<observer name="multiv_ship_mail_before" instance="\Ibapi\Multiv\Model\Shipmail" />
+	</event>
+
+       
+ </config>

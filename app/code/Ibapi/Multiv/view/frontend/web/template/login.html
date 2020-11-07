@@ -1,0 +1,155 @@
+
+<div class="block-authentication"
+     data-bind="afterRender: setModalElement, blockLoader: isLoading"
+     style="display: none">
+    <div class="block block-new-customer"
+         data-bind="attr: {'data-label': $t('or')}">
+        <div class="block-title">
+            <strong id="block-new-customer-heading"
+                    role="heading"
+                    aria-level="2"
+                    data-bind="i18n: 'Checkout as a new customer'"></strong>
+        </div>
+        <div class="block-content" aria-labelledby="block-new-customer-heading">
+           
+            <form class="form form-login form-horizontal"
+                  method="post"
+                  data-bind="event: {submit: reg }"
+                  id="reg-form">
+                  
+                  
+                <div class="fieldset login" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}">
+                    <div class="field email required">
+                    
+                        <label class="label" for="email"><span data-bind="i18n: 'Name'"></span></label>
+
+                            <input name="fname"
+                                   id="newname"
+                                   type="text"
+                                   class="input-text"
+                                   data-bind="attr: {autocomplete: autocomplete}"
+                                   data-validate="{required:true,}">
+                            <input name="lname"
+                                   id="newname1"
+                                   type="text"
+                                   class="input-text"
+                                   data-bind="attr: {autocomplete: autocomplete}"
+                                   data-validate="{required:true}">
+
+
+					</div>
+
+                    <div class="field email required">
+                        <label class="label" for="email"><span data-bind="i18n: 'Email Address'"></span></label>
+                        <div class="control">
+                            <input name="username"
+                                   id="newemail"
+                                   type="email"
+                                   class="input-text"
+                                   data-bind="attr: {autocomplete: autocomplete}"
+                                   data-validate="{required:true}">
+                        </div>
+                    </div>
+                    <div class="field password required">
+                        <label for="newpass" class="label"><span data-bind="i18n: 'Password'"></span></label>
+                        <div class="control">
+                            <input name="password"
+                                   type="password"
+                                   class="input-text"
+                                   id="newpass"
+                                   data-bind="attr: {autocomplete: autocomplete}"
+                                   data-validate="{required:true}">
+                        </div>
+                    </div>
+                    
+             <div class="field confirmation required">
+            <label for="password-confirmation" class="label" data-bind="i18n: 'Repeat Password'"><span></span></label>
+            <div class="control">
+                <input type="password" name="password_confirmation"  id="password-confirmation" class="input-text" data-validate="{required:true, equalTo:'#newpass'}" autocomplete="off">
+            </div>
+        </div>
+                    
+                    
+                    
+                    
+                    <!-- ko foreach: getRegion('additional-login-form-fields') -->
+                    <!-- ko template: getTemplate() --><!-- /ko -->
+                    <!-- /ko -->
+                    <div class="actions-toolbar">
+                        <input name="context" type="hidden" value="checkout" />
+                        <div class="primary">
+                            <button type="submit" class="action action-login secondary" name="send" id="send2b">
+                                <span data-bind="i18n: 'Register'"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+           <!-- regformend -->
+           
+        </div>
+    </div>
+
+    <div class="block block-customer-login"
+         data-bind="attr: {'data-label': $t('or')}">
+        <div class="block-title">
+            <strong id="block-customer-login-heading"
+                    role="heading"
+                    aria-level="2"
+                    data-bind="i18n: 'Checkout using your account'"></strong>
+        </div>
+        <!-- ko foreach: getRegion('messages') -->
+        <!-- ko template: getTemplate() --><!-- /ko -->
+        <!--/ko-->
+        <!-- ko foreach: getRegion('before') -->
+        <!-- ko template: getTemplate() --><!-- /ko -->
+        <!-- /ko -->
+        <div class="block-content" aria-labelledby="block-customer-login-heading">
+            <form class="form form-login"
+                  method="post"
+                  data-bind="event: {submit: login }"
+                  id="login-form2">
+                <div class="fieldset login" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}">
+                    <div class="field email required">
+                        <label class="label" for="email2"><span data-bind="i18n: 'Email Address'"></span></label>
+                        <div class="control">
+                            <input name="username"
+                                   id="email2"
+                                   type="email"
+                                   class="input-text"
+                                   data-bind="attr: {autocomplete: autocomplete}"
+                                   data-validate="{required:true, 'validate-email':true}">
+                        </div>
+                    </div>
+                    <div class="field password required">
+                        <label for="pass2" class="label"><span data-bind="i18n: 'Password'"></span></label>
+                        <div class="control">
+                            <input name="password"
+                                   type="password"
+                                   class="input-text"
+                                   id="pass2"
+                                   data-bind="attr: {autocomplete: autocomplete}"
+                                   data-validate="{required:true}">
+                        </div>
+                    </div>
+                    <!-- ko foreach: getRegion('additional-login-form-fields') -->
+                    <!-- ko template: getTemplate() --><!-- /ko -->
+                    <!-- /ko -->
+                    <div class="actions-toolbar">
+                        <input name="context" type="hidden" value="checkout" />
+                        <div class="primary">
+                            <button type="submit" class="action action-login secondary" name="send" id="send2c">
+                                <span data-bind="i18n: 'Sign In'"></span>
+                            </button>
+                        </div>
+                        <div class="secondary">
+                            <a class="action" data-bind="attr: {href: forgotPasswordUrl}">
+                                <span data-bind="i18n: 'Forgot Your Password?'"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

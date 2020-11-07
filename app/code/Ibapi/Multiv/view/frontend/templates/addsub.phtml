@@ -1,0 +1,11 @@
+<!--ko scope: 'minicart_content' -->
+
+<?php if($this->canShow()):?>
+	 <div id="subbox" data-bind="visible: getCartParam('prodiscount')>0">
+	 <?php echo __('Devenez Premium et obtenez') ?> <b><span data-bind="text: getCartParam('prodiscount')"></span>€</b> <?php echo __('de réduction immédiatement.') ?>
+	 <br />&nbsp
+	 <button data-bind="click: premSub"><?php echo __('Devenir VIP Premium') ?></button>
+	 <br />&nbsp
+	</div>
+<?php endif;?>
+<!--  /ko -->
